@@ -1,0 +1,7 @@
+apiVersion: 1
+providers:
+  - name: PulseStream
+    folder: PulseStream
+    type: file
+    options:
+      path: /var/lib/grafana/dashboards

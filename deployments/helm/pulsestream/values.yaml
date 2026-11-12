@@ -1,0 +1,43 @@
+image:
+  repository: pulsestream-go
+  tag: dev
+  pullPolicy: IfNotPresent
+secretName: pulsestream-secrets
+config:
+  PULSE_BROKERS: redpanda:9092
+  PULSE_CLICKHOUSE: http://clickhouse:8123
+  PULSE_REDIS: redis:6379
+  PULSE_ORIGIN: http://localhost:13000
+  PULSE_GROUP: pulsestream-v1
+  PULSE_PARTITIONS: '8'
+  PULSE_RATE: '10000'
+services:
+  ingestion-gateway: {replicas: 1}
+  stream-processor: {replicas: 1}
+  sink-dispatcher: {replicas: 1}
+  analytics-api: {replicas: 1}
+  alert-service: {replicas: 1}
+  websocket-gateway: {replicas: 1}
+resources:
+  requests: {cpu: 100m, memory: 128Mi}
+  limits: {cpu: '2', memory: 768Mi}
+ingress:
+  enabled: false
+  className: nginx
+  host: pulse.local
+  ingestHost: ingest.pulse.local
+  tlsSecret: ''
+keda:
+  enabled: false
+  brokers: redpanda:9092
+  maxReplicas: 8
+  lagThreshold: '1000'
+  authenticationRef: ''
+networkPolicy:
+  enabled: true
+  # Dependencies must be in this namespace and carry this label, or amend policy.
+  dependencyLabel: pulsestream-dependency
+dashboard:
+  enabled: true
+  image: pulsestream-dashboard:latest
+  pullPolicy: IfNotPresent

@@ -1,0 +1,12 @@
+{
+  "executed_at": "2026-11-11T22:28:35.105968+00:00",
+  "environment": "Kind v0.30.0, Kubernetes v1.34.0, Helm v3.19.0, single node",
+  "acknowledged": 100,
+  "verified_count": 100,
+  "verified_revenue_usd_minor": 64950,
+  "verified_failed_payments": 50,
+  "group_state": "Stable",
+  "alert_lifecycle": "open -> acknowledged -> resolved",
+  "websocket": "Live in actual browser",
+  "scope": "fresh development cluster; no KEDA or multi-node failover claim"
+}

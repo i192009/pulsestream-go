@@ -1,0 +1,15 @@
+.env
+bin/
+web/node_modules/
+web/dist/
+artifacts/
+*.prof
+coverage.out
+desktop.ini
+.tools/
+
+*.test
+web/*.tsbuildinfo
+
+__pycache__/
+*.pyc

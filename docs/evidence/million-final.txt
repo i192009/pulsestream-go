@@ -1,0 +1,5 @@
+=== RUN   TestMillionSyntheticWindowBatch
+    million_test.go:49: 1,000,000 synthetic events validated and aggregated across eight states in 11.431673141s; count and integer revenue match offline reference. This is a CPU workload, not a distributed throughput measurement.
+--- PASS: TestMillionSyntheticWindowBatch (11.43s)
+PASS
+ok  	github.com/pulsestream/pulsestream-go/tests/integration	11.466s

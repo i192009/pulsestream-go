@@ -1,0 +1,15 @@
+NAME                              IMAGE                                               COMMAND                  SERVICE             CREATED              STATUS                        PORTS
+pulsestream-alert-service-1       pulsestream-go:dev                                  "/pulsestream alert-…"   alert-service       About a minute ago   Up About a minute (healthy)   8080/tcp, 9090/tcp
+pulsestream-analytics-api-1       pulsestream-go:dev                                  "/pulsestream analyt…"   analytics-api       About a minute ago   Up About a minute (healthy)   127.0.0.1:18081->8080/tcp, 127.0.0.1:19091->9090/tcp
+pulsestream-clickhouse-1          clickhouse/clickhouse-server:25.8                   "/entrypoint.sh"         clickhouse          About an hour ago    Up 7 minutes (healthy)        127.0.0.1:8123->8123/tcp
+pulsestream-dashboard-1           pulsestream-dashboard                               "/docker-entrypoint.…"   dashboard           3 minutes ago        Up 3 minutes                  127.0.0.1:13000->8080/tcp
+pulsestream-grafana-1             grafana/grafana:12.1.1                              "/run.sh"                grafana             About an hour ago    Up 27 minutes                 127.0.0.1:3001->3000/tcp
+pulsestream-ingestion-gateway-1   pulsestream-go:dev                                  "/pulsestream ingest…"   ingestion-gateway   About a minute ago   Up About a minute (healthy)   127.0.0.1:18080->8080/tcp, 127.0.0.1:19090->9090/tcp
+pulsestream-otel-1                otel/opentelemetry-collector:0.132.0                "/otelcol --config=/…"   otel                About an hour ago    Up 27 minutes                 4317-4318/tcp, 55679/tcp
+pulsestream-postgres-1            postgres:17-alpine                                  "docker-entrypoint.s…"   postgres            About an hour ago    Up 27 minutes (healthy)       127.0.0.1:5432->5432/tcp
+pulsestream-prometheus-1          prom/prometheus:v3.5.0                              "/bin/prometheus --c…"   prometheus          About an hour ago    Up 27 minutes                 127.0.0.1:9095->9090/tcp
+pulsestream-redis-1               redis:8-alpine                                      "docker-entrypoint.s…"   redis               14 minutes ago       Up 6 minutes (healthy)        6379/tcp
+pulsestream-redpanda-1            docker.redpanda.com/redpandadata/redpanda:v25.3.4   "/entrypoint.sh redp…"   redpanda            About an hour ago    Up 5 minutes (healthy)        127.0.0.1:9644->9644/tcp, 127.0.0.1:19092->19092/tcp
+pulsestream-sink-dispatcher-1     pulsestream-go:dev                                  "/pulsestream sink-d…"   sink-dispatcher     About a minute ago   Up About a minute (healthy)   8080/tcp, 9090/tcp
+pulsestream-stream-processor-1    pulsestream-go:dev                                  "/pulsestream stream…"   stream-processor    About a minute ago   Up About a minute (healthy)   8080/tcp, 9090/tcp
+pulsestream-websocket-gateway-1   pulsestream-go:dev                                  "/pulsestream websoc…"   websocket-gateway   About a minute ago   Up About a minute (healthy)   127.0.0.1:18082->8080/tcp

@@ -1,0 +1,466 @@
+---
+# Source: pulsestream/templates/network.yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: pulse
+spec:
+  podSelector:
+    matchLabels: {app.kubernetes.io/part-of: pulse}
+  policyTypes: [Ingress, Egress]
+  ingress:
+    - from:
+        - podSelector: {}
+      ports: [{port: 8080}, {port: 9090}]
+  egress:
+    - to:
+        - namespaceSelector: {}
+      ports: [{port: 53, protocol: UDP}, {port: 53, protocol: TCP}]
+    - to:
+        - podSelector: {}
+      ports: [{port: 9092}, {port: 5432}, {port: 8123}, {port: 6379}, {port: 4318}, {port: 8080}]
+---
+# Source: pulsestream/templates/config.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: pulse-config
+data:
+  PULSE_BROKERS: "redpanda:9092"
+  PULSE_CLICKHOUSE: "http://clickhouse:8123"
+  PULSE_GROUP: "pulsestream-v1"
+  PULSE_ORIGIN: "http://localhost:13000"
+  PULSE_PARTITIONS: "8"
+  PULSE_RATE: "10000"
+  PULSE_REDIS: "redis:6379"
+---
+# Source: pulsestream/templates/dashboard.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: pulse-nginx
+data:
+  default.conf: |
+    server {
+      listen 8080;
+      root /usr/share/nginx/html;
+      location / { try_files $uri $uri/ /index.html; }
+      location /v1/ { proxy_pass http://pulse-analytics-api:8080; }
+      location /ws {
+        proxy_pass http://pulse-websocket-gateway:8080;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_read_timeout 60s;
+      }
+    }
+---
+# Source: pulsestream/templates/dashboard.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: pulse-dashboard
+spec:
+  selector: {app: pulse-dashboard}
+  ports: [{name: http, port: 8080, targetPort: http}]
+---
+# Source: pulsestream/templates/services.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: pulse-alert-service
+spec:
+  selector: {app: pulse-alert-service}
+  ports:
+    - {name: http, port: 8080, targetPort: http}
+---
+# Source: pulsestream/templates/services.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: pulse-analytics-api
+spec:
+  selector: {app: pulse-analytics-api}
+  ports:
+    - {name: http, port: 8080, targetPort: http}
+    - {name: grpc, port: 9090, targetPort: grpc}
+---
+# Source: pulsestream/templates/services.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: pulse-ingestion-gateway
+spec:
+  selector: {app: pulse-ingestion-gateway}
+  ports:
+    - {name: http, port: 8080, targetPort: http}
+    - {name: grpc, port: 9090, targetPort: grpc}
+---
+# Source: pulsestream/templates/services.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: pulse-sink-dispatcher
+spec:
+  selector: {app: pulse-sink-dispatcher}
+  ports:
+    - {name: http, port: 8080, targetPort: http}
+---
+# Source: pulsestream/templates/services.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: pulse-stream-processor
+spec:
+  selector: {app: pulse-stream-processor}
+  ports:
+    - {name: http, port: 8080, targetPort: http}
+---
+# Source: pulsestream/templates/services.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: pulse-websocket-gateway
+spec:
+  selector: {app: pulse-websocket-gateway}
+  ports:
+    - {name: http, port: 8080, targetPort: http}
+---
+# Source: pulsestream/templates/dashboard.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pulse-dashboard
+spec:
+  replicas: 1
+  selector:
+    matchLabels: {app: pulse-dashboard}
+  template:
+    metadata:
+      labels: {app: pulse-dashboard, app.kubernetes.io/part-of: pulse}
+    spec:
+      securityContext: {runAsNonRoot: true, runAsUser: 101}
+      containers:
+        - name: dashboard
+          image: pulsestream-dashboard:latest
+          imagePullPolicy: IfNotPresent
+          ports: [{name: http, containerPort: 8080}]
+          resources:
+            requests: {cpu: 50m, memory: 32Mi}
+            limits: {cpu: 200m, memory: 128Mi}
+          readinessProbe:
+            httpGet: {path: /, port: http}
+          livenessProbe:
+            httpGet: {path: /, port: http}
+          volumeMounts:
+            - name: config
+              mountPath: /etc/nginx/conf.d/default.conf
+              subPath: default.conf
+      volumes:
+        - name: config
+          configMap: {name: pulse-nginx}
+---
+# Source: pulsestream/templates/services.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pulse-alert-service
+  labels: {app.kubernetes.io/part-of: pulse, app.kubernetes.io/name: alert-service}
+spec:
+  replicas: 1
+  selector:
+    matchLabels: {app: pulse-alert-service}
+  template:
+    metadata:
+      labels: {app: pulse-alert-service, app.kubernetes.io/part-of: pulse, app.kubernetes.io/name: alert-service}
+    spec:
+      terminationGracePeriodSeconds: 30
+      securityContext: {runAsNonRoot: true, runAsUser: 65532, fsGroup: 65532, seccompProfile: {type: RuntimeDefault}}
+      containers:
+        - name: alert-service
+          image: pulsestream-go:dev
+          imagePullPolicy: IfNotPresent
+          args: [alert-service]
+          ports:
+            - {name: http, containerPort: 8080}
+          envFrom:
+            - configMapRef: {name: pulse-config}
+            - secretRef: {name: pulsestream-secrets}
+          securityContext: {allowPrivilegeEscalation: false, readOnlyRootFilesystem: true, capabilities: {drop: [ALL]}}
+          resources:
+            limits:
+              cpu: "2"
+              memory: 768Mi
+            requests:
+              cpu: 100m
+              memory: 128Mi
+          livenessProbe:
+            httpGet: {path: /healthz, port: http}
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          readinessProbe:
+            httpGet: {path: /readyz, port: http}
+            periodSeconds: 5
+          startupProbe:
+            httpGet: {path: /healthz, port: http}
+            failureThreshold: 30
+            periodSeconds: 5
+---
+# Source: pulsestream/templates/services.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pulse-analytics-api
+  labels: {app.kubernetes.io/part-of: pulse, app.kubernetes.io/name: analytics-api}
+spec:
+  replicas: 1
+  selector:
+    matchLabels: {app: pulse-analytics-api}
+  template:
+    metadata:
+      labels: {app: pulse-analytics-api, app.kubernetes.io/part-of: pulse, app.kubernetes.io/name: analytics-api}
+    spec:
+      terminationGracePeriodSeconds: 30
+      securityContext: {runAsNonRoot: true, runAsUser: 65532, fsGroup: 65532, seccompProfile: {type: RuntimeDefault}}
+      containers:
+        - name: analytics-api
+          image: pulsestream-go:dev
+          imagePullPolicy: IfNotPresent
+          args: [analytics-api]
+          ports:
+            - {name: http, containerPort: 8080}
+            - {name: grpc, containerPort: 9090}
+          envFrom:
+            - configMapRef: {name: pulse-config}
+            - secretRef: {name: pulsestream-secrets}
+          securityContext: {allowPrivilegeEscalation: false, readOnlyRootFilesystem: true, capabilities: {drop: [ALL]}}
+          resources:
+            limits:
+              cpu: "2"
+              memory: 768Mi
+            requests:
+              cpu: 100m
+              memory: 128Mi
+          livenessProbe:
+            httpGet: {path: /healthz, port: http}
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          readinessProbe:
+            httpGet: {path: /readyz, port: http}
+            periodSeconds: 5
+          startupProbe:
+            httpGet: {path: /healthz, port: http}
+            failureThreshold: 30
+            periodSeconds: 5
+---
+# Source: pulsestream/templates/services.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pulse-ingestion-gateway
+  labels: {app.kubernetes.io/part-of: pulse, app.kubernetes.io/name: ingestion-gateway}
+spec:
+  replicas: 1
+  selector:
+    matchLabels: {app: pulse-ingestion-gateway}
+  template:
+    metadata:
+      labels: {app: pulse-ingestion-gateway, app.kubernetes.io/part-of: pulse, app.kubernetes.io/name: ingestion-gateway}
+    spec:
+      terminationGracePeriodSeconds: 30
+      securityContext: {runAsNonRoot: true, runAsUser: 65532, fsGroup: 65532, seccompProfile: {type: RuntimeDefault}}
+      containers:
+        - name: ingestion-gateway
+          image: pulsestream-go:dev
+          imagePullPolicy: IfNotPresent
+          args: [ingestion-gateway]
+          ports:
+            - {name: http, containerPort: 8080}
+            - {name: grpc, containerPort: 9090}
+          envFrom:
+            - configMapRef: {name: pulse-config}
+            - secretRef: {name: pulsestream-secrets}
+          securityContext: {allowPrivilegeEscalation: false, readOnlyRootFilesystem: true, capabilities: {drop: [ALL]}}
+          resources:
+            limits:
+              cpu: "2"
+              memory: 768Mi
+            requests:
+              cpu: 100m
+              memory: 128Mi
+          livenessProbe:
+            httpGet: {path: /healthz, port: http}
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          readinessProbe:
+            httpGet: {path: /readyz, port: http}
+            periodSeconds: 5
+          startupProbe:
+            httpGet: {path: /healthz, port: http}
+            failureThreshold: 30
+            periodSeconds: 5
+---
+# Source: pulsestream/templates/services.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pulse-sink-dispatcher
+  labels: {app.kubernetes.io/part-of: pulse, app.kubernetes.io/name: sink-dispatcher}
+spec:
+  replicas: 1
+  selector:
+    matchLabels: {app: pulse-sink-dispatcher}
+  template:
+    metadata:
+      labels: {app: pulse-sink-dispatcher, app.kubernetes.io/part-of: pulse, app.kubernetes.io/name: sink-dispatcher}
+    spec:
+      terminationGracePeriodSeconds: 30
+      securityContext: {runAsNonRoot: true, runAsUser: 65532, fsGroup: 65532, seccompProfile: {type: RuntimeDefault}}
+      containers:
+        - name: sink-dispatcher
+          image: pulsestream-go:dev
+          imagePullPolicy: IfNotPresent
+          args: [sink-dispatcher]
+          ports:
+            - {name: http, containerPort: 8080}
+          envFrom:
+            - configMapRef: {name: pulse-config}
+            - secretRef: {name: pulsestream-secrets}
+          securityContext: {allowPrivilegeEscalation: false, readOnlyRootFilesystem: true, capabilities: {drop: [ALL]}}
+          resources:
+            limits:
+              cpu: "2"
+              memory: 768Mi
+            requests:
+              cpu: 100m
+              memory: 128Mi
+          livenessProbe:
+            httpGet: {path: /healthz, port: http}
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          readinessProbe:
+            httpGet: {path: /readyz, port: http}
+            periodSeconds: 5
+          startupProbe:
+            httpGet: {path: /healthz, port: http}
+            failureThreshold: 30
+            periodSeconds: 5
+---
+# Source: pulsestream/templates/services.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pulse-stream-processor
+  labels: {app.kubernetes.io/part-of: pulse, app.kubernetes.io/name: stream-processor}
+spec:
+  replicas: 1
+  selector:
+    matchLabels: {app: pulse-stream-processor}
+  template:
+    metadata:
+      labels: {app: pulse-stream-processor, app.kubernetes.io/part-of: pulse, app.kubernetes.io/name: stream-processor}
+    spec:
+      terminationGracePeriodSeconds: 30
+      securityContext: {runAsNonRoot: true, runAsUser: 65532, fsGroup: 65532, seccompProfile: {type: RuntimeDefault}}
+      containers:
+        - name: stream-processor
+          image: pulsestream-go:dev
+          imagePullPolicy: IfNotPresent
+          args: [stream-processor]
+          ports:
+            - {name: http, containerPort: 8080}
+          envFrom:
+            - configMapRef: {name: pulse-config}
+            - secretRef: {name: pulsestream-secrets}
+          securityContext: {allowPrivilegeEscalation: false, readOnlyRootFilesystem: true, capabilities: {drop: [ALL]}}
+          resources:
+            limits:
+              cpu: "2"
+              memory: 768Mi
+            requests:
+              cpu: 100m
+              memory: 128Mi
+          livenessProbe:
+            httpGet: {path: /healthz, port: http}
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          readinessProbe:
+            httpGet: {path: /readyz, port: http}
+            periodSeconds: 5
+          startupProbe:
+            httpGet: {path: /healthz, port: http}
+            failureThreshold: 30
+            periodSeconds: 5
+---
+# Source: pulsestream/templates/services.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pulse-websocket-gateway
+  labels: {app.kubernetes.io/part-of: pulse, app.kubernetes.io/name: websocket-gateway}
+spec:
+  replicas: 1
+  selector:
+    matchLabels: {app: pulse-websocket-gateway}
+  template:
+    metadata:
+      labels: {app: pulse-websocket-gateway, app.kubernetes.io/part-of: pulse, app.kubernetes.io/name: websocket-gateway}
+    spec:
+      terminationGracePeriodSeconds: 30
+      securityContext: {runAsNonRoot: true, runAsUser: 65532, fsGroup: 65532, seccompProfile: {type: RuntimeDefault}}
+      containers:
+        - name: websocket-gateway
+          image: pulsestream-go:dev
+          imagePullPolicy: IfNotPresent
+          args: [websocket-gateway]
+          ports:
+            - {name: http, containerPort: 8080}
+          envFrom:
+            - configMapRef: {name: pulse-config}
+            - secretRef: {name: pulsestream-secrets}
+          securityContext: {allowPrivilegeEscalation: false, readOnlyRootFilesystem: true, capabilities: {drop: [ALL]}}
+          resources:
+            limits:
+              cpu: "2"
+              memory: 768Mi
+            requests:
+              cpu: 100m
+              memory: 128Mi
+          livenessProbe:
+            httpGet: {path: /healthz, port: http}
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          readinessProbe:
+            httpGet: {path: /readyz, port: http}
+            periodSeconds: 5
+          startupProbe:
+            httpGet: {path: /healthz, port: http}
+            failureThreshold: 30
+            periodSeconds: 5
+---
+# Source: pulsestream/templates/init.yaml
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: pulse-init
+spec:
+  backoffLimit: 6
+  ttlSecondsAfterFinished: 3600
+  template:
+    spec:
+      restartPolicy: OnFailure
+      securityContext: {runAsNonRoot: true, runAsUser: 65532}
+      containers:
+        - name: init
+          image: pulsestream-go:dev
+          args: [init]
+          envFrom:
+            - configMapRef: {name: pulse-config}
+            - secretRef: {name: pulsestream-secrets}
+          resources:
+            limits:
+              cpu: "2"
+              memory: 768Mi
+            requests:
+              cpu: 100m
+              memory: 128Mi

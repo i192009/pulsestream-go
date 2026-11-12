@@ -1,0 +1,476 @@
+{
+  "apiVersion": "v1",
+  "kind": "PersistentVolumeClaim",
+  "metadata": {
+    "name": "postgres"
+  },
+  "spec": {
+    "accessModes": [
+      "ReadWriteOnce"
+    ],
+    "resources": {
+      "requests": {
+        "storage": "5Gi"
+      }
+    }
+  }
+}
+---
+{
+  "apiVersion": "apps/v1",
+  "kind": "Deployment",
+  "metadata": {
+    "name": "postgres"
+  },
+  "spec": {
+    "replicas": 1,
+    "strategy": {
+      "type": "Recreate"
+    },
+    "selector": {
+      "matchLabels": {
+        "app": "postgres"
+      }
+    },
+    "template": {
+      "metadata": {
+        "labels": {
+          "app": "postgres",
+          "pulsestream-dependency": "true"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "postgres",
+            "image": "postgres:17-alpine",
+            "ports": [
+              {
+                "containerPort": 5432
+              }
+            ],
+            "env": [
+              {
+                "name": "POSTGRES_USER",
+                "value": "pulse"
+              },
+              {
+                "name": "POSTGRES_PASSWORD",
+                "value": "pulse-dev"
+              },
+              {
+                "name": "POSTGRES_DB",
+                "value": "pulse"
+              }
+            ],
+            "resources": {
+              "requests": {
+                "cpu": "100m",
+                "memory": "128Mi"
+              },
+              "limits": {
+                "cpu": "2",
+                "memory": "1Gi"
+              }
+            },
+            "readinessProbe": {
+              "tcpSocket": {
+                "port": 5432
+              },
+              "initialDelaySeconds": 10,
+              "periodSeconds": 5
+            },
+            "volumeMounts": [
+              {
+                "name": "data",
+                "mountPath": "/var/lib/postgresql/data"
+              }
+            ]
+          }
+        ],
+        "volumes": [
+          {
+            "name": "data",
+            "persistentVolumeClaim": {
+              "claimName": "postgres"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
+---
+{
+  "apiVersion": "v1",
+  "kind": "Service",
+  "metadata": {
+    "name": "postgres"
+  },
+  "spec": {
+    "selector": {
+      "app": "postgres"
+    },
+    "ports": [
+      {
+        "port": 5432,
+        "targetPort": 5432
+      }
+    ]
+  }
+}
+---
+{
+  "apiVersion": "apps/v1",
+  "kind": "Deployment",
+  "metadata": {
+    "name": "redis"
+  },
+  "spec": {
+    "replicas": 1,
+    "strategy": {
+      "type": "Recreate"
+    },
+    "selector": {
+      "matchLabels": {
+        "app": "redis"
+      }
+    },
+    "template": {
+      "metadata": {
+        "labels": {
+          "app": "redis",
+          "pulsestream-dependency": "true"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "redis",
+            "image": "redis:8-alpine",
+            "ports": [
+              {
+                "containerPort": 6379
+              }
+            ],
+            "env": [],
+            "resources": {
+              "requests": {
+                "cpu": "100m",
+                "memory": "128Mi"
+              },
+              "limits": {
+                "cpu": "2",
+                "memory": "1Gi"
+              }
+            },
+            "readinessProbe": {
+              "tcpSocket": {
+                "port": 6379
+              },
+              "initialDelaySeconds": 10,
+              "periodSeconds": 5
+            },
+            "args": [
+              "redis-server",
+              "--maxmemory",
+              "64mb",
+              "--maxmemory-policy",
+              "noeviction"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
+---
+{
+  "apiVersion": "v1",
+  "kind": "Service",
+  "metadata": {
+    "name": "redis"
+  },
+  "spec": {
+    "selector": {
+      "app": "redis"
+    },
+    "ports": [
+      {
+        "port": 6379,
+        "targetPort": 6379
+      }
+    ]
+  }
+}
+---
+{
+  "apiVersion": "v1",
+  "kind": "PersistentVolumeClaim",
+  "metadata": {
+    "name": "clickhouse"
+  },
+  "spec": {
+    "accessModes": [
+      "ReadWriteOnce"
+    ],
+    "resources": {
+      "requests": {
+        "storage": "5Gi"
+      }
+    }
+  }
+}
+---
+{
+  "apiVersion": "apps/v1",
+  "kind": "Deployment",
+  "metadata": {
+    "name": "clickhouse"
+  },
+  "spec": {
+    "replicas": 1,
+    "strategy": {
+      "type": "Recreate"
+    },
+    "selector": {
+      "matchLabels": {
+        "app": "clickhouse"
+      }
+    },
+    "template": {
+      "metadata": {
+        "labels": {
+          "app": "clickhouse",
+          "pulsestream-dependency": "true"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "clickhouse",
+            "image": "clickhouse/clickhouse-server:25.8",
+            "ports": [
+              {
+                "containerPort": 8123
+              }
+            ],
+            "env": [
+              {
+                "name": "CLICKHOUSE_USER",
+                "value": "pulse"
+              },
+              {
+                "name": "CLICKHOUSE_PASSWORD",
+                "value": "pulse-dev"
+              },
+              {
+                "name": "CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT",
+                "value": "1"
+              }
+            ],
+            "resources": {
+              "requests": {
+                "cpu": "100m",
+                "memory": "128Mi"
+              },
+              "limits": {
+                "cpu": "2",
+                "memory": "1536Mi"
+              }
+            },
+            "readinessProbe": {
+              "tcpSocket": {
+                "port": 8123
+              },
+              "initialDelaySeconds": 10,
+              "periodSeconds": 5
+            },
+            "volumeMounts": [
+              {
+                "name": "config",
+                "mountPath": "/etc/clickhouse-server/config.d/pulse.xml",
+                "subPath": "pulse.xml"
+              },
+              {
+                "name": "data",
+                "mountPath": "/var/lib/clickhouse"
+              }
+            ]
+          }
+        ],
+        "volumes": [
+          {
+            "name": "config",
+            "configMap": {
+              "name": "clickhouse-config"
+            }
+          },
+          {
+            "name": "data",
+            "persistentVolumeClaim": {
+              "claimName": "clickhouse"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
+---
+{
+  "apiVersion": "v1",
+  "kind": "Service",
+  "metadata": {
+    "name": "clickhouse"
+  },
+  "spec": {
+    "selector": {
+      "app": "clickhouse"
+    },
+    "ports": [
+      {
+        "port": 8123,
+        "targetPort": 8123
+      }
+    ]
+  }
+}
+---
+{
+  "apiVersion": "v1",
+  "kind": "PersistentVolumeClaim",
+  "metadata": {
+    "name": "redpanda"
+  },
+  "spec": {
+    "accessModes": [
+      "ReadWriteOnce"
+    ],
+    "resources": {
+      "requests": {
+        "storage": "5Gi"
+      }
+    }
+  }
+}
+---
+{
+  "apiVersion": "apps/v1",
+  "kind": "Deployment",
+  "metadata": {
+    "name": "redpanda"
+  },
+  "spec": {
+    "replicas": 1,
+    "strategy": {
+      "type": "Recreate"
+    },
+    "selector": {
+      "matchLabels": {
+        "app": "redpanda"
+      }
+    },
+    "template": {
+      "metadata": {
+        "labels": {
+          "app": "redpanda",
+          "pulsestream-dependency": "true"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "redpanda",
+            "image": "docker.redpanda.com/redpandadata/redpanda:v25.3.4",
+            "ports": [
+              {
+                "containerPort": 9092
+              }
+            ],
+            "env": [],
+            "resources": {
+              "requests": {
+                "cpu": "100m",
+                "memory": "128Mi"
+              },
+              "limits": {
+                "cpu": "2",
+                "memory": "1Gi"
+              }
+            },
+            "readinessProbe": {
+              "tcpSocket": {
+                "port": 9092
+              },
+              "initialDelaySeconds": 10,
+              "periodSeconds": 5
+            },
+            "args": [
+              "redpanda",
+              "start",
+              "--smp",
+              "1",
+              "--memory",
+              "512M",
+              "--reserve-memory",
+              "0M",
+              "--overprovisioned",
+              "--node-id",
+              "0",
+              "--kafka-addr",
+              "0.0.0.0:9092",
+              "--advertise-kafka-addr",
+              "redpanda:9092",
+              "--check=false"
+            ],
+            "volumeMounts": [
+              {
+                "name": "data",
+                "mountPath": "/var/lib/redpanda/data"
+              }
+            ]
+          }
+        ],
+        "volumes": [
+          {
+            "name": "data",
+            "persistentVolumeClaim": {
+              "claimName": "redpanda"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
+---
+{
+  "apiVersion": "v1",
+  "kind": "Service",
+  "metadata": {
+    "name": "redpanda"
+  },
+  "spec": {
+    "selector": {
+      "app": "redpanda"
+    },
+    "ports": [
+      {
+        "port": 9092,
+        "targetPort": 9092
+      }
+    ]
+  }
+}
+---
+{
+  "apiVersion": "v1",
+  "kind": "ConfigMap",
+  "metadata": {
+    "name": "clickhouse-config"
+  },
+  "data": {
+    "pulse.xml": "<clickhouse>\n  <max_server_memory_usage>1100000000</max_server_memory_usage>\n  <background_pool_size>4</background_pool_size>\n  <background_schedule_pool_size>4</background_schedule_pool_size>\n  <background_merges_mutations_concurrency_ratio>2</background_merges_mutations_concurrency_ratio>\n  <merge_tree>\n    <number_of_free_entries_in_pool_to_execute_mutation>2</number_of_free_entries_in_pool_to_execute_mutation>\n    <number_of_free_entries_in_pool_to_lower_max_size_of_merge>2</number_of_free_entries_in_pool_to_lower_max_size_of_merge>\n    <number_of_free_entries_in_pool_to_execute_optimize_entire_partition>2</number_of_free_entries_in_pool_to_execute_optimize_entire_partition>\n  </merge_tree>\n</clickhouse>\n"
+  }
+}

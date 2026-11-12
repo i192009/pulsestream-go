@@ -1,0 +1,158 @@
+name: pulsestream
+x-app: &app
+  image: pulsestream-go:dev
+  build: .
+  init: true
+  restart: unless-stopped
+  env_file:
+    - path: .env
+      required: false
+  environment: &env
+    PULSE_KEYS: ${PULSE_KEYS:-demo-key:tenant-demo:admin,reader-key:tenant-demo:reader}
+    PULSE_DATABASE_URL: ${PULSE_DATABASE_URL:-postgres://pulse:pulse-dev@postgres:5432/pulse?sslmode=disable}
+    PULSE_BROKERS: ${PULSE_BROKERS:-redpanda:9092}
+    PULSE_CLICKHOUSE: ${PULSE_CLICKHOUSE:-http://clickhouse:8123}
+    PULSE_CLICKHOUSE_PASSWORD: ${PULSE_CLICKHOUSE_PASSWORD:-pulse-dev}
+    PULSE_REDIS: ${PULSE_REDIS:-redis:6379}
+    PULSE_ORIGIN: ${PULSE_ORIGIN:-http://localhost:13000}
+    OTEL_EXPORTER_OTLP_ENDPOINT: http://otel:4318
+  depends_on:
+    init:
+      condition: service_completed_successfully
+  healthcheck:
+    test: [CMD, /pulsestream, healthcheck]
+    interval: 10s
+    timeout: 4s
+    retries: 6
+    start_period: 10s
+  mem_limit: 256m
+  cpus: 1
+  stop_grace_period: 25s
+services:
+  redpanda:
+    image: docker.redpanda.com/redpandadata/redpanda:v25.3.4
+    command: [redpanda, start, --smp, '1', --memory, 512M, --reserve-memory, 0M, --overprovisioned, --node-id, '0', --kafka-addr, 'internal://0.0.0.0:9092,external://0.0.0.0:19092', --advertise-kafka-addr, 'internal://redpanda:9092,external://localhost:19092', --check=false]
+    ports: ['127.0.0.1:19092:19092', '127.0.0.1:9644:9644']
+    volumes: [redpanda:/var/lib/redpanda/data]
+    healthcheck:
+      test: [CMD, rpk, cluster, health]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+    mem_limit: 1g
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: pulse
+      POSTGRES_PASSWORD: pulse-dev
+      POSTGRES_DB: pulse
+    ports: ['127.0.0.1:5432:5432']
+    volumes: [postgres:/var/lib/postgresql/data]
+    healthcheck:
+      test: [CMD-SHELL, pg_isready -U pulse -d pulse]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    mem_limit: 512m
+  clickhouse:
+    image: clickhouse/clickhouse-server:25.8
+    environment:
+      CLICKHOUSE_USER: pulse
+      CLICKHOUSE_PASSWORD: pulse-dev
+      CLICKHOUSE_DB: default
+      CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT: '1'
+    ports: ['127.0.0.1:8123:8123']
+    volumes:
+      - clickhouse:/var/lib/clickhouse
+      - ./deployments/docker/clickhouse.xml:/etc/clickhouse-server/config.d/pulse.xml:ro
+    healthcheck:
+      test: [CMD, clickhouse-client, --user, pulse, --password, pulse-dev, --query, SELECT 1]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+    mem_limit: 1536m
+    ulimits:
+      nofile: {soft: 262144, hard: 262144}
+  redis:
+    image: redis:8-alpine
+    command: [redis-server, --maxmemory, 64mb, --maxmemory-policy, noeviction]
+    healthcheck:
+      test: [CMD, redis-cli, ping]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    mem_limit: 128m
+  init:
+    <<: *app
+    command: [init]
+    restart: 'no'
+    healthcheck: {disable: true}
+    depends_on:
+      redpanda: {condition: service_healthy}
+      postgres: {condition: service_healthy}
+      clickhouse: {condition: service_healthy}
+      redis: {condition: service_healthy}
+  ingestion-gateway:
+    <<: *app
+    command: [ingestion-gateway]
+    ports: ['127.0.0.1:18080:8080', '127.0.0.1:19090:9090']
+  stream-processor:
+    <<: *app
+    command: [stream-processor]
+    mem_limit: 768m
+    cpus: 2
+  sink-dispatcher:
+    <<: *app
+    command: [sink-dispatcher]
+    mem_limit: 512m
+  analytics-api:
+    <<: *app
+    command: [analytics-api]
+    ports: ['127.0.0.1:18081:8080', '127.0.0.1:19091:9090']
+  alert-service:
+    <<: *app
+    command: [alert-service]
+  websocket-gateway:
+    <<: *app
+    command: [websocket-gateway]
+    ports: ['127.0.0.1:18082:8080']
+  event-generator:
+    <<: *app
+    profiles: [simulation]
+    entrypoint: [/event-generator]
+    command: [-url, http://ingestion-gateway:8080/v1/events, -count, '100000', -rate, '1000']
+    restart: 'no'
+    healthcheck: {disable: true}
+  dashboard:
+    build: web
+    ports: ['127.0.0.1:13000:8080']
+    depends_on:
+      analytics-api: {condition: service_healthy}
+      websocket-gateway: {condition: service_healthy}
+    mem_limit: 128m
+  prometheus:
+    image: prom/prometheus:v3.5.0
+    command: [--config.file=/etc/prometheus/prometheus.yml, --storage.tsdb.retention.time=3d]
+    volumes: ['./deployments/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro', 'prometheus:/prometheus']
+    ports: ['127.0.0.1:9095:9090']
+    mem_limit: 256m
+  grafana:
+    image: grafana/grafana:12.1.1
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_PASSWORD:-pulse-dev}
+      GF_AUTH_ANONYMOUS_ENABLED: 'true'
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Viewer
+    volumes: ['./deployments/grafana/provisioning:/etc/grafana/provisioning:ro', './deployments/grafana/dashboards:/var/lib/grafana/dashboards:ro', 'grafana:/var/lib/grafana']
+    ports: ['127.0.0.1:3001:3000']
+    mem_limit: 256m
+  otel:
+    image: otel/opentelemetry-collector:0.132.0
+    command: [--config=/etc/otel/config.yaml]
+    volumes: ['./deployments/otel/config.yaml:/etc/otel/config.yaml:ro']
+    mem_limit: 128m
+volumes:
+  redpanda:
+  postgres:
+  clickhouse:
+  prometheus:
+  grafana:

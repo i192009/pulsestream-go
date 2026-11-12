@@ -1,0 +1,7 @@
++ docker run --rm -v C:\Users\i1920\Desktop\work\PulseStream:/src -v pulse-gomod:/go/pkg/mod -v pulse-gocache:/root/.cache/go-build -w /src --network pulsestream_default -e PULSE_KEYS=demo-key:tenant-demo:admin,reader-key:tenant-demo:reader -e PULSE_DATABASE_URL=postgres://pulse:pulse-dev@postgres:5432/pulse?sslmode=disable -e PULSE_BROKERS=redpanda:9092 -e PULSE_CLICKHOUSE=http://clickhouse:8123 -e PULSE_REDIS=redis:6379 -e PULSE_E2E=1 -e PULSE_E2E_COUNT=100000 -e PULSE_E2E_RATE=1000 golang:1.26 go test -v -count=1 -timeout 20m ./tests/e2e
+=== RUN   TestPublicPipeline
+    api_test.go:166: 100000 events acknowledged and durably visible in 102.900s (971.8 events/sec including pacing); independent counts and revenue verified
+    api_test.go:235: 100000 events acknowledged; persisted records, gRPC, auth, WebSocket and anomaly alerts verified
+--- PASS: TestPublicPipeline (105.29s)
+PASS
+ok  	github.com/pulsestream/pulsestream-go/tests/e2e	105.314s

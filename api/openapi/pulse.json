@@ -1,0 +1,706 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "PulseStream API",
+    "version": "1.0.0",
+    "description": "Tenant Bearer API keys. Read server ports carefully: ingestion and analytics are separate roles. Replay bodies are specified in docs/api.md."
+  },
+  "servers": [
+    {
+      "url": "http://localhost:18081",
+      "description": "Analytics and administration"
+    },
+    {
+      "url": "http://localhost:18080",
+      "description": "Ingestion POST /v1/events only"
+    }
+  ],
+  "security": [
+    {
+      "apiKey": []
+    }
+  ],
+  "paths": {
+    "/v1/events": {
+      "post": {
+        "summary": "Ingest a bounded batch; ingestion port 18080",
+        "responses": {
+          "202": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "401": {
+            "description": "Invalid API key"
+          },
+          "403": {
+            "description": "Role or tenant denied"
+          },
+          "503": {
+            "description": "Dependency unavailable; publish outcomes may be ambiguous"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "events"
+                ],
+                "properties": {
+                  "events": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 500,
+                    "items": {
+                      "$ref": "#/components/schemas/Event"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "Search tenant events; analytics port 18081",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "401": {
+            "description": "Invalid API key"
+          },
+          "403": {
+            "description": "Role or tenant denied"
+          },
+          "503": {
+            "description": "Dependency unavailable; publish outcomes may be ambiguous"
+          }
+        }
+      }
+    },
+    "/v1/metrics": {
+      "get": {
+        "summary": "Exact Go window aggregates from committed ClickHouse shards",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "401": {
+            "description": "Invalid API key"
+          },
+          "403": {
+            "description": "Role or tenant denied"
+          },
+          "503": {
+            "description": "Dependency unavailable; publish outcomes may be ambiguous"
+          }
+        },
+        "parameters": [
+          {
+            "name": "from",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "size_ms",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "step_ms",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ]
+      }
+    },
+    "/v1/alerts": {
+      "get": {
+        "summary": "Recent tenant alert history",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "401": {
+            "description": "Invalid API key"
+          },
+          "403": {
+            "description": "Role or tenant denied"
+          },
+          "503": {
+            "description": "Dependency unavailable; publish outcomes may be ambiguous"
+          }
+        }
+      }
+    },
+    "/v1/alerts/summary": {
+      "get": {
+        "summary": "Hourly tenant anomaly counts",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "401": {
+            "description": "Invalid API key"
+          },
+          "403": {
+            "description": "Role or tenant denied"
+          },
+          "503": {
+            "description": "Dependency unavailable; publish outcomes may be ambiguous"
+          }
+        }
+      }
+    },
+    "/v1/alerts/{id}/{action}": {
+      "post": {
+        "summary": "Admin acknowledgement or resolution",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "401": {
+            "description": "Invalid API key"
+          },
+          "403": {
+            "description": "Role or tenant denied"
+          },
+          "503": {
+            "description": "Dependency unavailable; publish outcomes may be ambiguous"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "action",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "enum": [
+                "acknowledge",
+                "resolve"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/v1/rules": {
+      "get": {
+        "summary": "Tenant detection rules",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "401": {
+            "description": "Invalid API key"
+          },
+          "403": {
+            "description": "Role or tenant denied"
+          },
+          "503": {
+            "description": "Dependency unavailable; publish outcomes may be ambiguous"
+          }
+        }
+      }
+    },
+    "/v1/rules/{id}": {
+      "put": {
+        "summary": "Admin rule update",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "401": {
+            "description": "Invalid API key"
+          },
+          "403": {
+            "description": "Role or tenant denied"
+          },
+          "503": {
+            "description": "Dependency unavailable; publish outcomes may be ambiguous"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/v1/pipeline": {
+      "get": {
+        "summary": "Admin checkpoint, outbox and last-observed partition status",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "401": {
+            "description": "Invalid API key"
+          },
+          "403": {
+            "description": "Role or tenant denied"
+          },
+          "503": {
+            "description": "Dependency unavailable; publish outcomes may be ambiguous"
+          }
+        }
+      }
+    },
+    "/v1/groups": {
+      "get": {
+        "summary": "Admin live broker consumer membership and lag",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "401": {
+            "description": "Invalid API key"
+          },
+          "403": {
+            "description": "Role or tenant denied"
+          },
+          "503": {
+            "description": "Dependency unavailable; publish outcomes may be ambiguous"
+          }
+        }
+      }
+    },
+    "/v1/dlq": {
+      "post": {
+        "summary": "Admin bounded dry-run DLQ inspection",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "401": {
+            "description": "Invalid API key"
+          },
+          "403": {
+            "description": "Role or tenant denied"
+          },
+          "503": {
+            "description": "Dependency unavailable; publish outcomes may be ambiguous"
+          }
+        }
+      }
+    },
+    "/v1/replays": {
+      "post": {
+        "summary": "Admin bounded replay; confirmation required for publication",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "401": {
+            "description": "Invalid API key"
+          },
+          "403": {
+            "description": "Role or tenant denied"
+          },
+          "503": {
+            "description": "Dependency unavailable; publish outcomes may be ambiguous"
+          }
+        }
+      },
+      "get": {
+        "summary": "Tenant replay audit history",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "401": {
+            "description": "Invalid API key"
+          },
+          "403": {
+            "description": "Role or tenant denied"
+          },
+          "503": {
+            "description": "Dependency unavailable; publish outcomes may be ambiguous"
+          }
+        }
+      }
+    },
+    "/v1/overview": {
+      "get": {
+        "summary": "Tenant-scoped persisted total, UTC-today events and authorized active tenant count",
+        "responses": {
+          "200": {
+            "description": "ClickHouse summary"
+          },
+          "401": {
+            "description": "Invalid key"
+          },
+          "503": {
+            "description": "Query unavailable"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "apiKey": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {
+      "Event": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "event_id",
+          "tenant_id",
+          "event_type",
+          "schema_version",
+          "partition_key",
+          "producer_id",
+          "event_timestamp",
+          "payload"
+        ],
+        "properties": {
+          "event_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "tenant_id": {
+            "type": "string"
+          },
+          "event_type": {
+            "type": "string"
+          },
+          "partition_key": {
+            "type": "string"
+          },
+          "producer_id": {
+            "type": "string"
+          },
+          "trace_id": {
+            "type": "string"
+          },
+          "correlation_id": {
+            "type": "string"
+          },
+          "schema_version": {
+            "const": 1
+          },
+          "event_timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ingestion_timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "payload": {
+            "$ref": "#/components/schemas/Payload"
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "maxLength": 256
+            },
+            "maxProperties": 16
+          }
+        },
+        "oneOf": [
+          {
+            "properties": {
+              "event_type": {
+                "const": "UserRegistered"
+              },
+              "payload": {
+                "required": [
+                  "user_id"
+                ]
+              }
+            }
+          },
+          {
+            "properties": {
+              "event_type": {
+                "const": "UserLoggedIn"
+              },
+              "payload": {
+                "required": [
+                  "user_id"
+                ]
+              }
+            }
+          },
+          {
+            "properties": {
+              "event_type": {
+                "const": "PageViewed"
+              },
+              "payload": {
+                "required": [
+                  "session_id",
+                  "page"
+                ]
+              }
+            }
+          },
+          {
+            "properties": {
+              "event_type": {
+                "const": "ProductViewed"
+              },
+              "payload": {
+                "required": [
+                  "session_id",
+                  "product_id"
+                ]
+              }
+            }
+          },
+          {
+            "properties": {
+              "event_type": {
+                "const": "CartUpdated"
+              },
+              "payload": {
+                "required": [
+                  "session_id",
+                  "product_id"
+                ]
+              }
+            }
+          },
+          {
+            "properties": {
+              "event_type": {
+                "const": "CheckoutStarted"
+              },
+              "payload": {
+                "required": [
+                  "order_id"
+                ]
+              }
+            }
+          },
+          {
+            "properties": {
+              "event_type": {
+                "const": "PaymentAttempted"
+              },
+              "payload": {
+                "required": [
+                  "order_id",
+                  "currency"
+                ]
+              }
+            }
+          },
+          {
+            "properties": {
+              "event_type": {
+                "const": "PaymentSucceeded"
+              },
+              "payload": {
+                "required": [
+                  "order_id",
+                  "currency"
+                ]
+              }
+            }
+          },
+          {
+            "properties": {
+              "event_type": {
+                "const": "PaymentFailed"
+              },
+              "payload": {
+                "required": [
+                  "order_id",
+                  "failure_reason"
+                ]
+              }
+            }
+          },
+          {
+            "properties": {
+              "event_type": {
+                "const": "OrderCreated"
+              },
+              "payload": {
+                "required": [
+                  "order_id"
+                ]
+              }
+            }
+          },
+          {
+            "properties": {
+              "event_type": {
+                "const": "OrderCompleted"
+              },
+              "payload": {
+                "required": [
+                  "order_id"
+                ]
+              }
+            }
+          },
+          {
+            "properties": {
+              "event_type": {
+                "const": "ServiceLatencyRecorded"
+              },
+              "payload": {
+                "required": [
+                  "service"
+                ]
+              }
+            }
+          },
+          {
+            "properties": {
+              "event_type": {
+                "const": "ApplicationErrorRecorded"
+              },
+              "payload": {
+                "required": [
+                  "service",
+                  "error_code"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "Payload": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "user_id": {
+            "type": "string",
+            "maxLength": 256
+          },
+          "session_id": {
+            "type": "string",
+            "maxLength": 256
+          },
+          "product_id": {
+            "type": "string",
+            "maxLength": 256
+          },
+          "order_id": {
+            "type": "string",
+            "maxLength": 256
+          },
+          "currency": {
+            "type": "string",
+            "maxLength": 256
+          },
+          "failure_reason": {
+            "type": "string",
+            "maxLength": 256
+          },
+          "service": {
+            "type": "string",
+            "maxLength": 256
+          },
+          "error_code": {
+            "type": "string",
+            "maxLength": 256
+          },
+          "page": {
+            "type": "string",
+            "maxLength": 256
+          },
+          "padding": {
+            "type": "string",
+            "maxLength": 16384
+          },
+          "amount_minor": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1000000000000
+          },
+          "latency_ms": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 60000
+          },
+          "quantity": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 10000
+          }
+        }
+      }
+    }
+  }
+}

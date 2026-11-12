@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ .Release.Name }}-init
+spec:
+  backoffLimit: 6
+  ttlSecondsAfterFinished: 3600
+  template:
+    spec:
+      restartPolicy: OnFailure
+      securityContext: {runAsNonRoot: true, runAsUser: 65532}
+      containers:
+        - name: init
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          args: [init]
+          envFrom:
+            - configMapRef: {name: {{ .Release.Name }}-config}
+            - secretRef: {name: {{ .Values.secretName }}}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}

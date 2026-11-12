@@ -1,0 +1,12 @@
+Executed 2026-11-11 on Windows ARM64 / Docker Desktop Linux ARM64.
+Command: python scripts/tasks.py e2e --count 100000 --rate 1000
+
+=== RUN   TestPublicPipeline
+api_test.go:152: 100000 events acknowledged and durably visible in 127.902s (781.8 events/sec including pacing); independent counts and revenue verified
+api_test.go:212: 100000 events acknowledged; persisted records, gRPC, auth, WebSocket and anomaly alerts verified
+--- PASS: TestPublicPipeline (130.14s)
+PASS
+ok github.com/pulsestream/pulsestream-go/tests/e2e 130.152s
+
+The rate includes generator pacing, concurrent compilation/resource sampling, and backlog drain.
+It is not an isolated saturation measurement and contains no per-event end-to-end latency histogram.

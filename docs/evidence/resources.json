@@ -1,0 +1,3182 @@
+[
+  {
+    "at": "2026-11-11T22:02:59.813486+00:00",
+    "containers": [
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "1.10%",
+        "Container": "37cf60ff967a567ffe6472b557c9bb06e7243b37fb8ecb4bd0d01c964fe8299a",
+        "ID": "37cf60ff967a",
+        "MemPerc": "3.59%",
+        "MemUsage": "9.191MiB / 256MiB",
+        "Name": "pulsestream-alert-service-1",
+        "NetIO": "254kB / 102kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.15%",
+        "Container": "4c65394ae02c679debb786eb1d4d82b4c41bc3258a1485dae4bdcaed758aea43",
+        "ID": "4c65394ae02c",
+        "MemPerc": "2.80%",
+        "MemUsage": "7.168MiB / 256MiB",
+        "Name": "pulsestream-analytics-api-1",
+        "NetIO": "20.8kB / 34.7kB",
+        "PIDs": "8"
+      },
+      {
+        "BlockIO": "485MB / 252MB",
+        "CPUPerc": "29.72%",
+        "Container": "022f26979567320a469f3f511e5630026e2cb01b2f4d1376c28e059dcf83b252",
+        "ID": "022f26979567",
+        "MemPerc": "37.54%",
+        "MemUsage": "576.6MiB / 1.5GiB",
+        "Name": "pulsestream-clickhouse-1",
+        "NetIO": "11.7MB / 1.21MB",
+        "PIDs": "166"
+      },
+      {
+        "BlockIO": "9.39MB / 16.4kB",
+        "CPUPerc": "0.00%",
+        "Container": "62d543f99f100c96b592802cf6d7f8c32899784a7ed41129a1edb36259699e21",
+        "ID": "62d543f99f10",
+        "MemPerc": "8.28%",
+        "MemUsage": "10.6MiB / 128MiB",
+        "Name": "pulsestream-dashboard-1",
+        "NetIO": "6.42kB / 126B",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "2.74GB / 231MB",
+        "CPUPerc": "0.19%",
+        "Container": "e07f4c2d1daced1d025e0bd8157a787b03cac62cb8e6b26ae2f741b886442c28",
+        "ID": "e07f4c2d1dac",
+        "MemPerc": "72.97%",
+        "MemUsage": "186.8MiB / 256MiB",
+        "Name": "pulsestream-grafana-1",
+        "NetIO": "28MB / 814kB",
+        "PIDs": "23"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "3.61%",
+        "Container": "7d33d24fccb9ec4e0516a0c0160ed1a21ebfe08a4734e7c3fe20a6756881b1ae",
+        "ID": "7d33d24fccb9",
+        "MemPerc": "6.28%",
+        "MemUsage": "16.07MiB / 256MiB",
+        "Name": "pulsestream-ingestion-gateway-1",
+        "NetIO": "16.6MB / 4.1MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "167MB / 0B",
+        "CPUPerc": "0.14%",
+        "Container": "6c7601e7acf95a0229e2f3729af9b2a1830fe7dfc25e261d196e72738fb56e04",
+        "ID": "6c7601e7acf9",
+        "MemPerc": "37.44%",
+        "MemUsage": "47.93MiB / 128MiB",
+        "Name": "pulsestream-otel-1",
+        "NetIO": "66.7kB / 21kB",
+        "PIDs": "10"
+      },
+      {
+        "BlockIO": "77.2MB / 135MB",
+        "CPUPerc": "79.57%",
+        "Container": "1f75ba3a756bf82c6f5fc5d97a68745ba7a3b8d9f3b1cd500d1a7ea1b9c13632",
+        "ID": "1f75ba3a756b",
+        "MemPerc": "16.23%",
+        "MemUsage": "83.11MiB / 512MiB",
+        "Name": "pulsestream-postgres-1",
+        "NetIO": "25.9MB / 21.7MB",
+        "PIDs": "18"
+      },
+      {
+        "BlockIO": "170MB / 1.04MB",
+        "CPUPerc": "0.46%",
+        "Container": "60864ef49c408aac68d28312aef2777b61762a3dafcf6d9b580054c81fb516b1",
+        "ID": "60864ef49c40",
+        "MemPerc": "29.73%",
+        "MemUsage": "76.1MiB / 256MiB",
+        "Name": "pulsestream-prometheus-1",
+        "NetIO": "15.8MB / 378kB",
+        "PIDs": "12"
+      },
+      {
+        "BlockIO": "59.8MB / 156kB",
+        "CPUPerc": "0.31%",
+        "Container": "b7ef8c6f1b8eb24aa4bf02c7c6c1ec4f5ed3f9aa4528606910234aacad3f1d7a",
+        "ID": "b7ef8c6f1b8e",
+        "MemPerc": "14.79%",
+        "MemUsage": "18.94MiB / 128MiB",
+        "Name": "pulsestream-redis-1",
+        "NetIO": "125kB / 43.6kB",
+        "PIDs": "6"
+      },
+      {
+        "BlockIO": "262MB / 17MB",
+        "CPUPerc": "3.79%",
+        "Container": "c741cc0fa60d2d28d3f1953c5691bee40fc1cb8dd8e1215e867a735fbfcecf8a",
+        "ID": "c741cc0fa60d",
+        "MemPerc": "17.02%",
+        "MemUsage": "174.3MiB / 1GiB",
+        "Name": "pulsestream-redpanda-1",
+        "NetIO": "4.65MB / 17.2MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "4.43%",
+        "Container": "a704c1042696332f4a8b931e212831ebbafb974a438ef2a668d3e445e9aba0e2",
+        "ID": "a704c1042696",
+        "MemPerc": "3.47%",
+        "MemUsage": "17.75MiB / 512MiB",
+        "Name": "pulsestream-sink-dispatcher-1",
+        "NetIO": "14.2MB / 11.3MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "46.95%",
+        "Container": "087700bf031c6c61b5e0717bb902cebd0e401ee21b3f653e83be8067d9bd843e",
+        "ID": "087700bf031c",
+        "MemPerc": "6.43%",
+        "MemUsage": "49.41MiB / 768MiB",
+        "Name": "pulsestream-stream-processor-1",
+        "NetIO": "6.37MB / 20.2MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "1e2a1241b705d6a4fbb069f5344d3a15b0be42d0979447b22d72923c80ac2760",
+        "ID": "1e2a1241b705",
+        "MemPerc": "3.05%",
+        "MemUsage": "7.809MiB / 256MiB",
+        "Name": "pulsestream-websocket-gateway-1",
+        "NetIO": "21.3kB / 34.7kB",
+        "PIDs": "9"
+      }
+    ]
+  },
+  {
+    "at": "2026-11-11T22:03:02.969112+00:00",
+    "containers": [
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "1.36%",
+        "Container": "37cf60ff967a567ffe6472b557c9bb06e7243b37fb8ecb4bd0d01c964fe8299a",
+        "ID": "37cf60ff967a",
+        "MemPerc": "4.02%",
+        "MemUsage": "10.28MiB / 256MiB",
+        "Name": "pulsestream-alert-service-1",
+        "NetIO": "329kB / 110kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "4c65394ae02c679debb786eb1d4d82b4c41bc3258a1485dae4bdcaed758aea43",
+        "ID": "4c65394ae02c",
+        "MemPerc": "2.80%",
+        "MemUsage": "7.164MiB / 256MiB",
+        "Name": "pulsestream-analytics-api-1",
+        "NetIO": "20.8kB / 34.7kB",
+        "PIDs": "8"
+      },
+      {
+        "BlockIO": "498MB / 252MB",
+        "CPUPerc": "44.38%",
+        "Container": "022f26979567320a469f3f511e5630026e2cb01b2f4d1376c28e059dcf83b252",
+        "ID": "022f26979567",
+        "MemPerc": "41.91%",
+        "MemUsage": "643.7MiB / 1.5GiB",
+        "Name": "pulsestream-clickhouse-1",
+        "NetIO": "18.2MB / 1.35MB",
+        "PIDs": "167"
+      },
+      {
+        "BlockIO": "9.39MB / 16.4kB",
+        "CPUPerc": "0.00%",
+        "Container": "62d543f99f100c96b592802cf6d7f8c32899784a7ed41129a1edb36259699e21",
+        "ID": "62d543f99f10",
+        "MemPerc": "8.27%",
+        "MemUsage": "10.58MiB / 128MiB",
+        "Name": "pulsestream-dashboard-1",
+        "NetIO": "6.42kB / 126B",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "2.74GB / 231MB",
+        "CPUPerc": "2.07%",
+        "Container": "e07f4c2d1daced1d025e0bd8157a787b03cac62cb8e6b26ae2f741b886442c28",
+        "ID": "e07f4c2d1dac",
+        "MemPerc": "73.48%",
+        "MemUsage": "188.1MiB / 256MiB",
+        "Name": "pulsestream-grafana-1",
+        "NetIO": "28MB / 814kB",
+        "PIDs": "23"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "2.75%",
+        "Container": "7d33d24fccb9ec4e0516a0c0160ed1a21ebfe08a4734e7c3fe20a6756881b1ae",
+        "ID": "7d33d24fccb9",
+        "MemPerc": "5.92%",
+        "MemUsage": "15.15MiB / 256MiB",
+        "Name": "pulsestream-ingestion-gateway-1",
+        "NetIO": "18MB / 4.44MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "182MB / 0B",
+        "CPUPerc": "5.25%",
+        "Container": "6c7601e7acf95a0229e2f3729af9b2a1830fe7dfc25e261d196e72738fb56e04",
+        "ID": "6c7601e7acf9",
+        "MemPerc": "41.51%",
+        "MemUsage": "53.14MiB / 128MiB",
+        "Name": "pulsestream-otel-1",
+        "NetIO": "111kB / 21.8kB",
+        "PIDs": "10"
+      },
+      {
+        "BlockIO": "77.2MB / 146MB",
+        "CPUPerc": "64.95%",
+        "Container": "1f75ba3a756bf82c6f5fc5d97a68745ba7a3b8d9f3b1cd500d1a7ea1b9c13632",
+        "ID": "1f75ba3a756b",
+        "MemPerc": "17.57%",
+        "MemUsage": "89.93MiB / 512MiB",
+        "Name": "pulsestream-postgres-1",
+        "NetIO": "34.9MB / 30.1MB",
+        "PIDs": "18"
+      },
+      {
+        "BlockIO": "170MB / 1.04MB",
+        "CPUPerc": "0.15%",
+        "Container": "60864ef49c408aac68d28312aef2777b61762a3dafcf6d9b580054c81fb516b1",
+        "ID": "60864ef49c40",
+        "MemPerc": "29.62%",
+        "MemUsage": "75.82MiB / 256MiB",
+        "Name": "pulsestream-prometheus-1",
+        "NetIO": "15.8MB / 380kB",
+        "PIDs": "12"
+      },
+      {
+        "BlockIO": "59.8MB / 156kB",
+        "CPUPerc": "0.28%",
+        "Container": "b7ef8c6f1b8eb24aa4bf02c7c6c1ec4f5ed3f9aa4528606910234aacad3f1d7a",
+        "ID": "b7ef8c6f1b8e",
+        "MemPerc": "14.52%",
+        "MemUsage": "18.59MiB / 128MiB",
+        "Name": "pulsestream-redis-1",
+        "NetIO": "133kB / 45.9kB",
+        "PIDs": "6"
+      },
+      {
+        "BlockIO": "262MB / 18.5MB",
+        "CPUPerc": "2.98%",
+        "Container": "c741cc0fa60d2d28d3f1953c5691bee40fc1cb8dd8e1215e867a735fbfcecf8a",
+        "ID": "c741cc0fa60d",
+        "MemPerc": "17.07%",
+        "MemUsage": "174.8MiB / 1GiB",
+        "Name": "pulsestream-redpanda-1",
+        "NetIO": "5.33MB / 17.3MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "4.07%",
+        "Container": "a704c1042696332f4a8b931e212831ebbafb974a438ef2a668d3e445e9aba0e2",
+        "ID": "a704c1042696",
+        "MemPerc": "3.46%",
+        "MemUsage": "17.7MiB / 512MiB",
+        "Name": "pulsestream-sink-dispatcher-1",
+        "NetIO": "23.3MB / 18.5MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "51.38%",
+        "Container": "087700bf031c6c61b5e0717bb902cebd0e401ee21b3f653e83be8067d9bd843e",
+        "ID": "087700bf031c",
+        "MemPerc": "6.43%",
+        "MemUsage": "49.42MiB / 768MiB",
+        "Name": "pulsestream-stream-processor-1",
+        "NetIO": "8.92MB / 32.5MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "1e2a1241b705d6a4fbb069f5344d3a15b0be42d0979447b22d72923c80ac2760",
+        "ID": "1e2a1241b705",
+        "MemPerc": "3.08%",
+        "MemUsage": "7.895MiB / 256MiB",
+        "Name": "pulsestream-websocket-gateway-1",
+        "NetIO": "21.8kB / 37kB",
+        "PIDs": "9"
+      }
+    ]
+  },
+  {
+    "at": "2026-11-11T22:03:06.176988+00:00",
+    "containers": [
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "5.21%",
+        "Container": "37cf60ff967a567ffe6472b557c9bb06e7243b37fb8ecb4bd0d01c964fe8299a",
+        "ID": "37cf60ff967a",
+        "MemPerc": "3.74%",
+        "MemUsage": "9.582MiB / 256MiB",
+        "Name": "pulsestream-alert-service-1",
+        "NetIO": "381kB / 118kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.03%",
+        "Container": "4c65394ae02c679debb786eb1d4d82b4c41bc3258a1485dae4bdcaed758aea43",
+        "ID": "4c65394ae02c",
+        "MemPerc": "2.84%",
+        "MemUsage": "7.266MiB / 256MiB",
+        "Name": "pulsestream-analytics-api-1",
+        "NetIO": "21.3kB / 37kB",
+        "PIDs": "8"
+      },
+      {
+        "BlockIO": "498MB / 252MB",
+        "CPUPerc": "19.92%",
+        "Container": "022f26979567320a469f3f511e5630026e2cb01b2f4d1376c28e059dcf83b252",
+        "ID": "022f26979567",
+        "MemPerc": "41.98%",
+        "MemUsage": "644.8MiB / 1.5GiB",
+        "Name": "pulsestream-clickhouse-1",
+        "NetIO": "22.7MB / 1.45MB",
+        "PIDs": "167"
+      },
+      {
+        "BlockIO": "9.39MB / 16.4kB",
+        "CPUPerc": "0.00%",
+        "Container": "62d543f99f100c96b592802cf6d7f8c32899784a7ed41129a1edb36259699e21",
+        "ID": "62d543f99f10",
+        "MemPerc": "8.28%",
+        "MemUsage": "10.6MiB / 128MiB",
+        "Name": "pulsestream-dashboard-1",
+        "NetIO": "6.42kB / 126B",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "2.74GB / 231MB",
+        "CPUPerc": "0.20%",
+        "Container": "e07f4c2d1daced1d025e0bd8157a787b03cac62cb8e6b26ae2f741b886442c28",
+        "ID": "e07f4c2d1dac",
+        "MemPerc": "73.46%",
+        "MemUsage": "188.1MiB / 256MiB",
+        "Name": "pulsestream-grafana-1",
+        "NetIO": "28MB / 814kB",
+        "PIDs": "23"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "4.54%",
+        "Container": "7d33d24fccb9ec4e0516a0c0160ed1a21ebfe08a4734e7c3fe20a6756881b1ae",
+        "ID": "7d33d24fccb9",
+        "MemPerc": "5.97%",
+        "MemUsage": "15.28MiB / 256MiB",
+        "Name": "pulsestream-ingestion-gateway-1",
+        "NetIO": "19.4MB / 4.78MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "182MB / 0B",
+        "CPUPerc": "0.56%",
+        "Container": "6c7601e7acf95a0229e2f3729af9b2a1830fe7dfc25e261d196e72738fb56e04",
+        "ID": "6c7601e7acf9",
+        "MemPerc": "42.20%",
+        "MemUsage": "54.02MiB / 128MiB",
+        "Name": "pulsestream-otel-1",
+        "NetIO": "150kB / 22.5kB",
+        "PIDs": "10"
+      },
+      {
+        "BlockIO": "77.2MB / 176MB",
+        "CPUPerc": "56.18%",
+        "Container": "1f75ba3a756bf82c6f5fc5d97a68745ba7a3b8d9f3b1cd500d1a7ea1b9c13632",
+        "ID": "1f75ba3a756b",
+        "MemPerc": "19.49%",
+        "MemUsage": "99.78MiB / 512MiB",
+        "Name": "pulsestream-postgres-1",
+        "NetIO": "47.1MB / 41.2MB",
+        "PIDs": "18"
+      },
+      {
+        "BlockIO": "170MB / 1.04MB",
+        "CPUPerc": "0.26%",
+        "Container": "60864ef49c408aac68d28312aef2777b61762a3dafcf6d9b580054c81fb516b1",
+        "ID": "60864ef49c40",
+        "MemPerc": "29.82%",
+        "MemUsage": "76.33MiB / 256MiB",
+        "Name": "pulsestream-prometheus-1",
+        "NetIO": "16MB / 383kB",
+        "PIDs": "12"
+      },
+      {
+        "BlockIO": "59.8MB / 156kB",
+        "CPUPerc": "3.09%",
+        "Container": "b7ef8c6f1b8eb24aa4bf02c7c6c1ec4f5ed3f9aa4528606910234aacad3f1d7a",
+        "ID": "b7ef8c6f1b8e",
+        "MemPerc": "14.96%",
+        "MemUsage": "19.15MiB / 128MiB",
+        "Name": "pulsestream-redis-1",
+        "NetIO": "141kB / 48.2kB",
+        "PIDs": "6"
+      },
+      {
+        "BlockIO": "262MB / 19.8MB",
+        "CPUPerc": "2.89%",
+        "Container": "c741cc0fa60d2d28d3f1953c5691bee40fc1cb8dd8e1215e867a735fbfcecf8a",
+        "ID": "c741cc0fa60d",
+        "MemPerc": "17.11%",
+        "MemUsage": "175.2MiB / 1GiB",
+        "Name": "pulsestream-redpanda-1",
+        "NetIO": "5.9MB / 17.4MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "4.20%",
+        "Container": "a704c1042696332f4a8b931e212831ebbafb974a438ef2a668d3e445e9aba0e2",
+        "ID": "a704c1042696",
+        "MemPerc": "3.64%",
+        "MemUsage": "18.63MiB / 512MiB",
+        "Name": "pulsestream-sink-dispatcher-1",
+        "NetIO": "29.5MB / 23.3MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "51.00%",
+        "Container": "087700bf031c6c61b5e0717bb902cebd0e401ee21b3f653e83be8067d9bd843e",
+        "ID": "087700bf031c",
+        "MemPerc": "6.51%",
+        "MemUsage": "50MiB / 768MiB",
+        "Name": "pulsestream-stream-processor-1",
+        "NetIO": "10.7MB / 40.9MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "4.04%",
+        "Container": "1e2a1241b705d6a4fbb069f5344d3a15b0be42d0979447b22d72923c80ac2760",
+        "ID": "1e2a1241b705",
+        "MemPerc": "3.28%",
+        "MemUsage": "8.391MiB / 256MiB",
+        "Name": "pulsestream-websocket-gateway-1",
+        "NetIO": "24.1kB / 40.7kB",
+        "PIDs": "9"
+      }
+    ]
+  },
+  {
+    "at": "2026-11-11T22:03:09.348735+00:00",
+    "containers": [
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.60%",
+        "Container": "37cf60ff967a567ffe6472b557c9bb06e7243b37fb8ecb4bd0d01c964fe8299a",
+        "ID": "37cf60ff967a",
+        "MemPerc": "3.53%",
+        "MemUsage": "9.043MiB / 256MiB",
+        "Name": "pulsestream-alert-service-1",
+        "NetIO": "491kB / 127kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "4c65394ae02c679debb786eb1d4d82b4c41bc3258a1485dae4bdcaed758aea43",
+        "ID": "4c65394ae02c",
+        "MemPerc": "2.85%",
+        "MemUsage": "7.297MiB / 256MiB",
+        "Name": "pulsestream-analytics-api-1",
+        "NetIO": "23.1kB / 38.4kB",
+        "PIDs": "8"
+      },
+      {
+        "BlockIO": "499MB / 252MB",
+        "CPUPerc": "47.33%",
+        "Container": "022f26979567320a469f3f511e5630026e2cb01b2f4d1376c28e059dcf83b252",
+        "ID": "022f26979567",
+        "MemPerc": "43.01%",
+        "MemUsage": "660.7MiB / 1.5GiB",
+        "Name": "pulsestream-clickhouse-1",
+        "NetIO": "27.2MB / 1.6MB",
+        "PIDs": "167"
+      },
+      {
+        "BlockIO": "9.39MB / 16.4kB",
+        "CPUPerc": "0.00%",
+        "Container": "62d543f99f100c96b592802cf6d7f8c32899784a7ed41129a1edb36259699e21",
+        "ID": "62d543f99f10",
+        "MemPerc": "8.28%",
+        "MemUsage": "10.6MiB / 128MiB",
+        "Name": "pulsestream-dashboard-1",
+        "NetIO": "6.42kB / 126B",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "2.74GB / 231MB",
+        "CPUPerc": "0.30%",
+        "Container": "e07f4c2d1daced1d025e0bd8157a787b03cac62cb8e6b26ae2f741b886442c28",
+        "ID": "e07f4c2d1dac",
+        "MemPerc": "73.49%",
+        "MemUsage": "188.1MiB / 256MiB",
+        "Name": "pulsestream-grafana-1",
+        "NetIO": "28MB / 814kB",
+        "PIDs": "23"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "3.23%",
+        "Container": "7d33d24fccb9ec4e0516a0c0160ed1a21ebfe08a4734e7c3fe20a6756881b1ae",
+        "ID": "7d33d24fccb9",
+        "MemPerc": "6.46%",
+        "MemUsage": "16.54MiB / 256MiB",
+        "Name": "pulsestream-ingestion-gateway-1",
+        "NetIO": "20.8MB / 5.14MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "182MB / 0B",
+        "CPUPerc": "0.10%",
+        "Container": "6c7601e7acf95a0229e2f3729af9b2a1830fe7dfc25e261d196e72738fb56e04",
+        "ID": "6c7601e7acf9",
+        "MemPerc": "42.21%",
+        "MemUsage": "54.03MiB / 128MiB",
+        "Name": "pulsestream-otel-1",
+        "NetIO": "151kB / 22.7kB",
+        "PIDs": "10"
+      },
+      {
+        "BlockIO": "77.2MB / 186MB",
+        "CPUPerc": "49.79%",
+        "Container": "1f75ba3a756bf82c6f5fc5d97a68745ba7a3b8d9f3b1cd500d1a7ea1b9c13632",
+        "ID": "1f75ba3a756b",
+        "MemPerc": "20.88%",
+        "MemUsage": "106.9MiB / 512MiB",
+        "Name": "pulsestream-postgres-1",
+        "NetIO": "55.6MB / 49MB",
+        "PIDs": "18"
+      },
+      {
+        "BlockIO": "170MB / 1.04MB",
+        "CPUPerc": "0.30%",
+        "Container": "60864ef49c408aac68d28312aef2777b61762a3dafcf6d9b580054c81fb516b1",
+        "ID": "60864ef49c40",
+        "MemPerc": "29.73%",
+        "MemUsage": "76.1MiB / 256MiB",
+        "Name": "pulsestream-prometheus-1",
+        "NetIO": "16.1MB / 385kB",
+        "PIDs": "12"
+      },
+      {
+        "BlockIO": "59.8MB / 156kB",
+        "CPUPerc": "0.36%",
+        "Container": "b7ef8c6f1b8eb24aa4bf02c7c6c1ec4f5ed3f9aa4528606910234aacad3f1d7a",
+        "ID": "b7ef8c6f1b8e",
+        "MemPerc": "14.96%",
+        "MemUsage": "19.15MiB / 128MiB",
+        "Name": "pulsestream-redis-1",
+        "NetIO": "149kB / 50.5kB",
+        "PIDs": "6"
+      },
+      {
+        "BlockIO": "262MB / 21.2MB",
+        "CPUPerc": "3.46%",
+        "Container": "c741cc0fa60d2d28d3f1953c5691bee40fc1cb8dd8e1215e867a735fbfcecf8a",
+        "ID": "c741cc0fa60d",
+        "MemPerc": "17.25%",
+        "MemUsage": "176.7MiB / 1GiB",
+        "Name": "pulsestream-redpanda-1",
+        "NetIO": "6.48MB / 17.6MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "4.42%",
+        "Container": "a704c1042696332f4a8b931e212831ebbafb974a438ef2a668d3e445e9aba0e2",
+        "ID": "a704c1042696",
+        "MemPerc": "3.64%",
+        "MemUsage": "18.65MiB / 512MiB",
+        "Name": "pulsestream-sink-dispatcher-1",
+        "NetIO": "35.6MB / 28.2MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "47.75%",
+        "Container": "087700bf031c6c61b5e0717bb902cebd0e401ee21b3f653e83be8067d9bd843e",
+        "ID": "087700bf031c",
+        "MemPerc": "6.55%",
+        "MemUsage": "50.28MiB / 768MiB",
+        "Name": "pulsestream-stream-processor-1",
+        "NetIO": "12.4MB / 49.3MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "1e2a1241b705d6a4fbb069f5344d3a15b0be42d0979447b22d72923c80ac2760",
+        "ID": "1e2a1241b705",
+        "MemPerc": "3.12%",
+        "MemUsage": "7.984MiB / 256MiB",
+        "Name": "pulsestream-websocket-gateway-1",
+        "NetIO": "24.1kB / 40.7kB",
+        "PIDs": "9"
+      }
+    ]
+  },
+  {
+    "at": "2026-11-11T22:03:12.605089+00:00",
+    "containers": [
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.70%",
+        "Container": "37cf60ff967a567ffe6472b557c9bb06e7243b37fb8ecb4bd0d01c964fe8299a",
+        "ID": "37cf60ff967a",
+        "MemPerc": "3.09%",
+        "MemUsage": "7.906MiB / 256MiB",
+        "Name": "pulsestream-alert-service-1",
+        "NetIO": "551kB / 136kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.06%",
+        "Container": "4c65394ae02c679debb786eb1d4d82b4c41bc3258a1485dae4bdcaed758aea43",
+        "ID": "4c65394ae02c",
+        "MemPerc": "2.89%",
+        "MemUsage": "7.402MiB / 256MiB",
+        "Name": "pulsestream-analytics-api-1",
+        "NetIO": "25.6kB / 41.8kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "513MB / 252MB",
+        "CPUPerc": "32.87%",
+        "Container": "022f26979567320a469f3f511e5630026e2cb01b2f4d1376c28e059dcf83b252",
+        "ID": "022f26979567",
+        "MemPerc": "42.42%",
+        "MemUsage": "651.5MiB / 1.5GiB",
+        "Name": "pulsestream-clickhouse-1",
+        "NetIO": "31.7MB / 1.76MB",
+        "PIDs": "168"
+      },
+      {
+        "BlockIO": "9.73MB / 16.4kB",
+        "CPUPerc": "0.42%",
+        "Container": "62d543f99f100c96b592802cf6d7f8c32899784a7ed41129a1edb36259699e21",
+        "ID": "62d543f99f10",
+        "MemPerc": "8.56%",
+        "MemUsage": "10.96MiB / 128MiB",
+        "Name": "pulsestream-dashboard-1",
+        "NetIO": "24.6kB / 287kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "2.75GB / 231MB",
+        "CPUPerc": "2.66%",
+        "Container": "e07f4c2d1daced1d025e0bd8157a787b03cac62cb8e6b26ae2f741b886442c28",
+        "ID": "e07f4c2d1dac",
+        "MemPerc": "74.01%",
+        "MemUsage": "189.5MiB / 256MiB",
+        "Name": "pulsestream-grafana-1",
+        "NetIO": "28MB / 814kB",
+        "PIDs": "23"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "3.24%",
+        "Container": "7d33d24fccb9ec4e0516a0c0160ed1a21ebfe08a4734e7c3fe20a6756881b1ae",
+        "ID": "7d33d24fccb9",
+        "MemPerc": "5.92%",
+        "MemUsage": "15.14MiB / 256MiB",
+        "Name": "pulsestream-ingestion-gateway-1",
+        "NetIO": "22.3MB / 5.5MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "185MB / 0B",
+        "CPUPerc": "0.13%",
+        "Container": "6c7601e7acf95a0229e2f3729af9b2a1830fe7dfc25e261d196e72738fb56e04",
+        "ID": "6c7601e7acf9",
+        "MemPerc": "43.93%",
+        "MemUsage": "56.23MiB / 128MiB",
+        "Name": "pulsestream-otel-1",
+        "NetIO": "182kB / 23.5kB",
+        "PIDs": "10"
+      },
+      {
+        "BlockIO": "77.3MB / 212MB",
+        "CPUPerc": "57.12%",
+        "Container": "1f75ba3a756bf82c6f5fc5d97a68745ba7a3b8d9f3b1cd500d1a7ea1b9c13632",
+        "ID": "1f75ba3a756b",
+        "MemPerc": "22.54%",
+        "MemUsage": "115.4MiB / 512MiB",
+        "Name": "pulsestream-postgres-1",
+        "NetIO": "64.4MB / 56.7MB",
+        "PIDs": "18"
+      },
+      {
+        "BlockIO": "170MB / 1.04MB",
+        "CPUPerc": "0.00%",
+        "Container": "60864ef49c408aac68d28312aef2777b61762a3dafcf6d9b580054c81fb516b1",
+        "ID": "60864ef49c40",
+        "MemPerc": "29.72%",
+        "MemUsage": "76.07MiB / 256MiB",
+        "Name": "pulsestream-prometheus-1",
+        "NetIO": "16.1MB / 387kB",
+        "PIDs": "12"
+      },
+      {
+        "BlockIO": "59.8MB / 156kB",
+        "CPUPerc": "0.40%",
+        "Container": "b7ef8c6f1b8eb24aa4bf02c7c6c1ec4f5ed3f9aa4528606910234aacad3f1d7a",
+        "ID": "b7ef8c6f1b8e",
+        "MemPerc": "14.99%",
+        "MemUsage": "19.19MiB / 128MiB",
+        "Name": "pulsestream-redis-1",
+        "NetIO": "160kB / 54.5kB",
+        "PIDs": "6"
+      },
+      {
+        "BlockIO": "264MB / 22.5MB",
+        "CPUPerc": "3.01%",
+        "Container": "c741cc0fa60d2d28d3f1953c5691bee40fc1cb8dd8e1215e867a735fbfcecf8a",
+        "ID": "c741cc0fa60d",
+        "MemPerc": "17.67%",
+        "MemUsage": "180.9MiB / 1GiB",
+        "Name": "pulsestream-redpanda-1",
+        "NetIO": "7.05MB / 20.1MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "4.17%",
+        "Container": "a704c1042696332f4a8b931e212831ebbafb974a438ef2a668d3e445e9aba0e2",
+        "ID": "a704c1042696",
+        "MemPerc": "3.49%",
+        "MemUsage": "17.86MiB / 512MiB",
+        "Name": "pulsestream-sink-dispatcher-1",
+        "NetIO": "41.8MB / 33.2MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "55.17%",
+        "Container": "087700bf031c6c61b5e0717bb902cebd0e401ee21b3f653e83be8067d9bd843e",
+        "ID": "087700bf031c",
+        "MemPerc": "6.76%",
+        "MemUsage": "51.92MiB / 768MiB",
+        "Name": "pulsestream-stream-processor-1",
+        "NetIO": "16.9MB / 58MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.01%",
+        "Container": "1e2a1241b705d6a4fbb069f5344d3a15b0be42d0979447b22d72923c80ac2760",
+        "ID": "1e2a1241b705",
+        "MemPerc": "3.14%",
+        "MemUsage": "8.027MiB / 256MiB",
+        "Name": "pulsestream-websocket-gateway-1",
+        "NetIO": "24.9kB / 43.2kB",
+        "PIDs": "9"
+      }
+    ]
+  },
+  {
+    "at": "2026-11-11T22:03:15.956679+00:00",
+    "containers": [
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "7.41%",
+        "Container": "37cf60ff967a567ffe6472b557c9bb06e7243b37fb8ecb4bd0d01c964fe8299a",
+        "ID": "37cf60ff967a",
+        "MemPerc": "3.35%",
+        "MemUsage": "8.586MiB / 256MiB",
+        "Name": "pulsestream-alert-service-1",
+        "NetIO": "672kB / 148kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "4c65394ae02c679debb786eb1d4d82b4c41bc3258a1485dae4bdcaed758aea43",
+        "ID": "4c65394ae02c",
+        "MemPerc": "2.92%",
+        "MemUsage": "7.469MiB / 256MiB",
+        "Name": "pulsestream-analytics-api-1",
+        "NetIO": "27.1kB / 44.5kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "514MB / 320MB",
+        "CPUPerc": "45.15%",
+        "Container": "022f26979567320a469f3f511e5630026e2cb01b2f4d1376c28e059dcf83b252",
+        "ID": "022f26979567",
+        "MemPerc": "42.11%",
+        "MemUsage": "646.8MiB / 1.5GiB",
+        "Name": "pulsestream-clickhouse-1",
+        "NetIO": "36.3MB / 1.92MB",
+        "PIDs": "168"
+      },
+      {
+        "BlockIO": "9.73MB / 16.4kB",
+        "CPUPerc": "0.00%",
+        "Container": "62d543f99f100c96b592802cf6d7f8c32899784a7ed41129a1edb36259699e21",
+        "ID": "62d543f99f10",
+        "MemPerc": "8.61%",
+        "MemUsage": "11.02MiB / 128MiB",
+        "Name": "pulsestream-dashboard-1",
+        "NetIO": "25.9kB / 288kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "2.75GB / 231MB",
+        "CPUPerc": "0.26%",
+        "Container": "e07f4c2d1daced1d025e0bd8157a787b03cac62cb8e6b26ae2f741b886442c28",
+        "ID": "e07f4c2d1dac",
+        "MemPerc": "73.70%",
+        "MemUsage": "188.7MiB / 256MiB",
+        "Name": "pulsestream-grafana-1",
+        "NetIO": "28MB / 814kB",
+        "PIDs": "23"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "3.98%",
+        "Container": "7d33d24fccb9ec4e0516a0c0160ed1a21ebfe08a4734e7c3fe20a6756881b1ae",
+        "ID": "7d33d24fccb9",
+        "MemPerc": "5.67%",
+        "MemUsage": "14.52MiB / 256MiB",
+        "Name": "pulsestream-ingestion-gateway-1",
+        "NetIO": "23.7MB / 5.86MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "185MB / 0B",
+        "CPUPerc": "0.96%",
+        "Container": "6c7601e7acf95a0229e2f3729af9b2a1830fe7dfc25e261d196e72738fb56e04",
+        "ID": "6c7601e7acf9",
+        "MemPerc": "44.02%",
+        "MemUsage": "56.35MiB / 128MiB",
+        "Name": "pulsestream-otel-1",
+        "NetIO": "183kB / 24.1kB",
+        "PIDs": "10"
+      },
+      {
+        "BlockIO": "77.3MB / 239MB",
+        "CPUPerc": "86.76%",
+        "Container": "1f75ba3a756bf82c6f5fc5d97a68745ba7a3b8d9f3b1cd500d1a7ea1b9c13632",
+        "ID": "1f75ba3a756b",
+        "MemPerc": "23.99%",
+        "MemUsage": "122.8MiB / 512MiB",
+        "Name": "pulsestream-postgres-1",
+        "NetIO": "73.1MB / 64.9MB",
+        "PIDs": "18"
+      },
+      {
+        "BlockIO": "170MB / 1.04MB",
+        "CPUPerc": "0.17%",
+        "Container": "60864ef49c408aac68d28312aef2777b61762a3dafcf6d9b580054c81fb516b1",
+        "ID": "60864ef49c40",
+        "MemPerc": "29.63%",
+        "MemUsage": "75.86MiB / 256MiB",
+        "Name": "pulsestream-prometheus-1",
+        "NetIO": "16.3MB / 391kB",
+        "PIDs": "12"
+      },
+      {
+        "BlockIO": "59.8MB / 156kB",
+        "CPUPerc": "5.85%",
+        "Container": "b7ef8c6f1b8eb24aa4bf02c7c6c1ec4f5ed3f9aa4528606910234aacad3f1d7a",
+        "ID": "b7ef8c6f1b8e",
+        "MemPerc": "14.52%",
+        "MemUsage": "18.59MiB / 128MiB",
+        "Name": "pulsestream-redis-1",
+        "NetIO": "168kB / 56.9kB",
+        "PIDs": "6"
+      },
+      {
+        "BlockIO": "265MB / 24MB",
+        "CPUPerc": "3.32%",
+        "Container": "c741cc0fa60d2d28d3f1953c5691bee40fc1cb8dd8e1215e867a735fbfcecf8a",
+        "ID": "c741cc0fa60d",
+        "MemPerc": "17.68%",
+        "MemUsage": "181.1MiB / 1GiB",
+        "Name": "pulsestream-redpanda-1",
+        "NetIO": "7.63MB / 20.2MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "3.77%",
+        "Container": "a704c1042696332f4a8b931e212831ebbafb974a438ef2a668d3e445e9aba0e2",
+        "ID": "a704c1042696",
+        "MemPerc": "3.47%",
+        "MemUsage": "17.74MiB / 512MiB",
+        "Name": "pulsestream-sink-dispatcher-1",
+        "NetIO": "47.8MB / 38.1MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "45.14%",
+        "Container": "087700bf031c6c61b5e0717bb902cebd0e401ee21b3f653e83be8067d9bd843e",
+        "ID": "087700bf031c",
+        "MemPerc": "7.15%",
+        "MemUsage": "54.89MiB / 768MiB",
+        "Name": "pulsestream-stream-processor-1",
+        "NetIO": "18.9MB / 66.7MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.27%",
+        "Container": "1e2a1241b705d6a4fbb069f5344d3a15b0be42d0979447b22d72923c80ac2760",
+        "ID": "1e2a1241b705",
+        "MemPerc": "3.16%",
+        "MemUsage": "8.102MiB / 256MiB",
+        "Name": "pulsestream-websocket-gateway-1",
+        "NetIO": "25.3kB / 43.8kB",
+        "PIDs": "9"
+      }
+    ]
+  },
+  {
+    "at": "2026-11-11T22:03:19.603901+00:00",
+    "containers": [
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.82%",
+        "Container": "37cf60ff967a567ffe6472b557c9bb06e7243b37fb8ecb4bd0d01c964fe8299a",
+        "ID": "37cf60ff967a",
+        "MemPerc": "3.25%",
+        "MemUsage": "8.312MiB / 256MiB",
+        "Name": "pulsestream-alert-service-1",
+        "NetIO": "733kB / 152kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.37%",
+        "Container": "4c65394ae02c679debb786eb1d4d82b4c41bc3258a1485dae4bdcaed758aea43",
+        "ID": "4c65394ae02c",
+        "MemPerc": "3.02%",
+        "MemUsage": "7.723MiB / 256MiB",
+        "Name": "pulsestream-analytics-api-1",
+        "NetIO": "30.3kB / 48.7kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "514MB / 329MB",
+        "CPUPerc": "55.54%",
+        "Container": "022f26979567320a469f3f511e5630026e2cb01b2f4d1376c28e059dcf83b252",
+        "ID": "022f26979567",
+        "MemPerc": "42.46%",
+        "MemUsage": "652.2MiB / 1.5GiB",
+        "Name": "pulsestream-clickhouse-1",
+        "NetIO": "38.8MB / 2.07MB",
+        "PIDs": "168"
+      },
+      {
+        "BlockIO": "9.73MB / 16.4kB",
+        "CPUPerc": "0.43%",
+        "Container": "62d543f99f100c96b592802cf6d7f8c32899784a7ed41129a1edb36259699e21",
+        "ID": "62d543f99f10",
+        "MemPerc": "8.66%",
+        "MemUsage": "11.08MiB / 128MiB",
+        "Name": "pulsestream-dashboard-1",
+        "NetIO": "27.3kB / 290kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "2.75GB / 231MB",
+        "CPUPerc": "1.66%",
+        "Container": "e07f4c2d1daced1d025e0bd8157a787b03cac62cb8e6b26ae2f741b886442c28",
+        "ID": "e07f4c2d1dac",
+        "MemPerc": "73.69%",
+        "MemUsage": "188.6MiB / 256MiB",
+        "Name": "pulsestream-grafana-1",
+        "NetIO": "28MB / 814kB",
+        "PIDs": "23"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "8.12%",
+        "Container": "7d33d24fccb9ec4e0516a0c0160ed1a21ebfe08a4734e7c3fe20a6756881b1ae",
+        "ID": "7d33d24fccb9",
+        "MemPerc": "5.48%",
+        "MemUsage": "14.03MiB / 256MiB",
+        "Name": "pulsestream-ingestion-gateway-1",
+        "NetIO": "25.3MB / 6.26MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "192MB / 0B",
+        "CPUPerc": "0.39%",
+        "Container": "6c7601e7acf95a0229e2f3729af9b2a1830fe7dfc25e261d196e72738fb56e04",
+        "ID": "6c7601e7acf9",
+        "MemPerc": "45.28%",
+        "MemUsage": "57.96MiB / 128MiB",
+        "Name": "pulsestream-otel-1",
+        "NetIO": "216kB / 24.7kB",
+        "PIDs": "10"
+      },
+      {
+        "BlockIO": "77.3MB / 285MB",
+        "CPUPerc": "23.06%",
+        "Container": "1f75ba3a756bf82c6f5fc5d97a68745ba7a3b8d9f3b1cd500d1a7ea1b9c13632",
+        "ID": "1f75ba3a756b",
+        "MemPerc": "24.61%",
+        "MemUsage": "126MiB / 512MiB",
+        "Name": "pulsestream-postgres-1",
+        "NetIO": "77.6MB / 69.3MB",
+        "PIDs": "18"
+      },
+      {
+        "BlockIO": "170MB / 1.06MB",
+        "CPUPerc": "0.23%",
+        "Container": "60864ef49c408aac68d28312aef2777b61762a3dafcf6d9b580054c81fb516b1",
+        "ID": "60864ef49c40",
+        "MemPerc": "29.63%",
+        "MemUsage": "75.84MiB / 256MiB",
+        "Name": "pulsestream-prometheus-1",
+        "NetIO": "16.4MB / 394kB",
+        "PIDs": "12"
+      },
+      {
+        "BlockIO": "59.8MB / 156kB",
+        "CPUPerc": "1.00%",
+        "Container": "b7ef8c6f1b8eb24aa4bf02c7c6c1ec4f5ed3f9aa4528606910234aacad3f1d7a",
+        "ID": "b7ef8c6f1b8e",
+        "MemPerc": "14.52%",
+        "MemUsage": "18.59MiB / 128MiB",
+        "Name": "pulsestream-redis-1",
+        "NetIO": "178kB / 59.8kB",
+        "PIDs": "6"
+      },
+      {
+        "BlockIO": "265MB / 25.3MB",
+        "CPUPerc": "5.10%",
+        "Container": "c741cc0fa60d2d28d3f1953c5691bee40fc1cb8dd8e1215e867a735fbfcecf8a",
+        "ID": "c741cc0fa60d",
+        "MemPerc": "17.73%",
+        "MemUsage": "181.5MiB / 1GiB",
+        "Name": "pulsestream-redpanda-1",
+        "NetIO": "8.15MB / 20.4MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "3.68%",
+        "Container": "a704c1042696332f4a8b931e212831ebbafb974a438ef2a668d3e445e9aba0e2",
+        "ID": "a704c1042696",
+        "MemPerc": "3.27%",
+        "MemUsage": "16.75MiB / 512MiB",
+        "Name": "pulsestream-sink-dispatcher-1",
+        "NetIO": "51.2MB / 40.9MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "22.64%",
+        "Container": "087700bf031c6c61b5e0717bb902cebd0e401ee21b3f653e83be8067d9bd843e",
+        "ID": "087700bf031c",
+        "MemPerc": "6.92%",
+        "MemUsage": "53.15MiB / 768MiB",
+        "Name": "pulsestream-stream-processor-1",
+        "NetIO": "19.9MB / 71.1MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "1e2a1241b705d6a4fbb069f5344d3a15b0be42d0979447b22d72923c80ac2760",
+        "ID": "1e2a1241b705",
+        "MemPerc": "3.20%",
+        "MemUsage": "8.18MiB / 256MiB",
+        "Name": "pulsestream-websocket-gateway-1",
+        "NetIO": "27.6kB / 47.4kB",
+        "PIDs": "9"
+      }
+    ]
+  },
+  {
+    "at": "2026-11-11T22:03:23.049936+00:00",
+    "containers": [
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "37cf60ff967a567ffe6472b557c9bb06e7243b37fb8ecb4bd0d01c964fe8299a",
+        "ID": "37cf60ff967a",
+        "MemPerc": "3.34%",
+        "MemUsage": "8.539MiB / 256MiB",
+        "Name": "pulsestream-alert-service-1",
+        "NetIO": "857kB / 164kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "4c65394ae02c679debb786eb1d4d82b4c41bc3258a1485dae4bdcaed758aea43",
+        "ID": "4c65394ae02c",
+        "MemPerc": "2.93%",
+        "MemUsage": "7.508MiB / 256MiB",
+        "Name": "pulsestream-analytics-api-1",
+        "NetIO": "30.3kB / 48.7kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "514MB / 330MB",
+        "CPUPerc": "61.73%",
+        "Container": "022f26979567320a469f3f511e5630026e2cb01b2f4d1376c28e059dcf83b252",
+        "ID": "022f26979567",
+        "MemPerc": "44.37%",
+        "MemUsage": "681.6MiB / 1.5GiB",
+        "Name": "pulsestream-clickhouse-1",
+        "NetIO": "41.5MB / 2.22MB",
+        "PIDs": "168"
+      },
+      {
+        "BlockIO": "9.73MB / 16.4kB",
+        "CPUPerc": "0.00%",
+        "Container": "62d543f99f100c96b592802cf6d7f8c32899784a7ed41129a1edb36259699e21",
+        "ID": "62d543f99f10",
+        "MemPerc": "8.62%",
+        "MemUsage": "11.04MiB / 128MiB",
+        "Name": "pulsestream-dashboard-1",
+        "NetIO": "39.5kB / 303kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "2.75GB / 231MB",
+        "CPUPerc": "2.65%",
+        "Container": "e07f4c2d1daced1d025e0bd8157a787b03cac62cb8e6b26ae2f741b886442c28",
+        "ID": "e07f4c2d1dac",
+        "MemPerc": "71.93%",
+        "MemUsage": "184.2MiB / 256MiB",
+        "Name": "pulsestream-grafana-1",
+        "NetIO": "28MB / 814kB",
+        "PIDs": "23"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "4.38%",
+        "Container": "7d33d24fccb9ec4e0516a0c0160ed1a21ebfe08a4734e7c3fe20a6756881b1ae",
+        "ID": "7d33d24fccb9",
+        "MemPerc": "5.87%",
+        "MemUsage": "15.02MiB / 256MiB",
+        "Name": "pulsestream-ingestion-gateway-1",
+        "NetIO": "26.8MB / 6.62MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "192MB / 0B",
+        "CPUPerc": "0.16%",
+        "Container": "6c7601e7acf95a0229e2f3729af9b2a1830fe7dfc25e261d196e72738fb56e04",
+        "ID": "6c7601e7acf9",
+        "MemPerc": "44.15%",
+        "MemUsage": "56.52MiB / 128MiB",
+        "Name": "pulsestream-otel-1",
+        "NetIO": "234kB / 25.5kB",
+        "PIDs": "10"
+      },
+      {
+        "BlockIO": "77.3MB / 291MB",
+        "CPUPerc": "47.94%",
+        "Container": "1f75ba3a756bf82c6f5fc5d97a68745ba7a3b8d9f3b1cd500d1a7ea1b9c13632",
+        "ID": "1f75ba3a756b",
+        "MemPerc": "25.16%",
+        "MemUsage": "128.8MiB / 512MiB",
+        "Name": "pulsestream-postgres-1",
+        "NetIO": "82.9MB / 73.7MB",
+        "PIDs": "18"
+      },
+      {
+        "BlockIO": "170MB / 1.06MB",
+        "CPUPerc": "0.10%",
+        "Container": "60864ef49c408aac68d28312aef2777b61762a3dafcf6d9b580054c81fb516b1",
+        "ID": "60864ef49c40",
+        "MemPerc": "29.12%",
+        "MemUsage": "74.55MiB / 256MiB",
+        "Name": "pulsestream-prometheus-1",
+        "NetIO": "16.4MB / 397kB",
+        "PIDs": "12"
+      },
+      {
+        "BlockIO": "59.8MB / 238kB",
+        "CPUPerc": "0.55%",
+        "Container": "b7ef8c6f1b8eb24aa4bf02c7c6c1ec4f5ed3f9aa4528606910234aacad3f1d7a",
+        "ID": "b7ef8c6f1b8e",
+        "MemPerc": "14.18%",
+        "MemUsage": "18.16MiB / 128MiB",
+        "Name": "pulsestream-redis-1",
+        "NetIO": "188kB / 62.4kB",
+        "PIDs": "6"
+      },
+      {
+        "BlockIO": "265MB / 28MB",
+        "CPUPerc": "6.23%",
+        "Container": "c741cc0fa60d2d28d3f1953c5691bee40fc1cb8dd8e1215e867a735fbfcecf8a",
+        "ID": "c741cc0fa60d",
+        "MemPerc": "17.40%",
+        "MemUsage": "178.1MiB / 1GiB",
+        "Name": "pulsestream-redpanda-1",
+        "NetIO": "8.61MB / 20.4MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "5.22%",
+        "Container": "a704c1042696332f4a8b931e212831ebbafb974a438ef2a668d3e445e9aba0e2",
+        "ID": "a704c1042696",
+        "MemPerc": "3.54%",
+        "MemUsage": "18.15MiB / 512MiB",
+        "Name": "pulsestream-sink-dispatcher-1",
+        "NetIO": "54.6MB / 43.7MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "32.32%",
+        "Container": "087700bf031c6c61b5e0717bb902cebd0e401ee21b3f653e83be8067d9bd843e",
+        "ID": "087700bf031c",
+        "MemPerc": "6.95%",
+        "MemUsage": "53.4MiB / 768MiB",
+        "Name": "pulsestream-stream-processor-1",
+        "NetIO": "21MB / 76.1MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.14%",
+        "Container": "1e2a1241b705d6a4fbb069f5344d3a15b0be42d0979447b22d72923c80ac2760",
+        "ID": "1e2a1241b705",
+        "MemPerc": "3.21%",
+        "MemUsage": "8.223MiB / 256MiB",
+        "Name": "pulsestream-websocket-gateway-1",
+        "NetIO": "28.2kB / 49.9kB",
+        "PIDs": "9"
+      }
+    ]
+  },
+  {
+    "at": "2026-11-11T22:03:26.528600+00:00",
+    "containers": [
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.17%",
+        "Container": "37cf60ff967a567ffe6472b557c9bb06e7243b37fb8ecb4bd0d01c964fe8299a",
+        "ID": "37cf60ff967a",
+        "MemPerc": "3.52%",
+        "MemUsage": "9.012MiB / 256MiB",
+        "Name": "pulsestream-alert-service-1",
+        "NetIO": "919kB / 171kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.01%",
+        "Container": "4c65394ae02c679debb786eb1d4d82b4c41bc3258a1485dae4bdcaed758aea43",
+        "ID": "4c65394ae02c",
+        "MemPerc": "2.96%",
+        "MemUsage": "7.59MiB / 256MiB",
+        "Name": "pulsestream-analytics-api-1",
+        "NetIO": "30.8kB / 51.1kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "516MB / 338MB",
+        "CPUPerc": "37.25%",
+        "Container": "022f26979567320a469f3f511e5630026e2cb01b2f4d1376c28e059dcf83b252",
+        "ID": "022f26979567",
+        "MemPerc": "42.43%",
+        "MemUsage": "651.7MiB / 1.5GiB",
+        "Name": "pulsestream-clickhouse-1",
+        "NetIO": "45.9MB / 2.38MB",
+        "PIDs": "168"
+      },
+      {
+        "BlockIO": "9.73MB / 16.4kB",
+        "CPUPerc": "0.00%",
+        "Container": "62d543f99f100c96b592802cf6d7f8c32899784a7ed41129a1edb36259699e21",
+        "ID": "62d543f99f10",
+        "MemPerc": "8.59%",
+        "MemUsage": "11MiB / 128MiB",
+        "Name": "pulsestream-dashboard-1",
+        "NetIO": "39.5kB / 303kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "2.75GB / 231MB",
+        "CPUPerc": "0.16%",
+        "Container": "e07f4c2d1daced1d025e0bd8157a787b03cac62cb8e6b26ae2f741b886442c28",
+        "ID": "e07f4c2d1dac",
+        "MemPerc": "71.94%",
+        "MemUsage": "184.2MiB / 256MiB",
+        "Name": "pulsestream-grafana-1",
+        "NetIO": "28MB / 814kB",
+        "PIDs": "23"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "3.54%",
+        "Container": "7d33d24fccb9ec4e0516a0c0160ed1a21ebfe08a4734e7c3fe20a6756881b1ae",
+        "ID": "7d33d24fccb9",
+        "MemPerc": "5.82%",
+        "MemUsage": "14.89MiB / 256MiB",
+        "Name": "pulsestream-ingestion-gateway-1",
+        "NetIO": "28.5MB / 7.02MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "192MB / 0B",
+        "CPUPerc": "1.78%",
+        "Container": "6c7601e7acf95a0229e2f3729af9b2a1830fe7dfc25e261d196e72738fb56e04",
+        "ID": "6c7601e7acf9",
+        "MemPerc": "44.20%",
+        "MemUsage": "56.57MiB / 128MiB",
+        "Name": "pulsestream-otel-1",
+        "NetIO": "259kB / 26.1kB",
+        "PIDs": "10"
+      },
+      {
+        "BlockIO": "77.3MB / 325MB",
+        "CPUPerc": "55.45%",
+        "Container": "1f75ba3a756bf82c6f5fc5d97a68745ba7a3b8d9f3b1cd500d1a7ea1b9c13632",
+        "ID": "1f75ba3a756b",
+        "MemPerc": "26.48%",
+        "MemUsage": "135.6MiB / 512MiB",
+        "Name": "pulsestream-postgres-1",
+        "NetIO": "90.6MB / 81.4MB",
+        "PIDs": "18"
+      },
+      {
+        "BlockIO": "170MB / 1.08MB",
+        "CPUPerc": "0.20%",
+        "Container": "60864ef49c408aac68d28312aef2777b61762a3dafcf6d9b580054c81fb516b1",
+        "ID": "60864ef49c40",
+        "MemPerc": "29.11%",
+        "MemUsage": "74.52MiB / 256MiB",
+        "Name": "pulsestream-prometheus-1",
+        "NetIO": "16.6MB / 399kB",
+        "PIDs": "12"
+      },
+      {
+        "BlockIO": "59.8MB / 238kB",
+        "CPUPerc": "5.77%",
+        "Container": "b7ef8c6f1b8eb24aa4bf02c7c6c1ec4f5ed3f9aa4528606910234aacad3f1d7a",
+        "ID": "b7ef8c6f1b8e",
+        "MemPerc": "13.95%",
+        "MemUsage": "17.86MiB / 128MiB",
+        "Name": "pulsestream-redis-1",
+        "NetIO": "197kB / 65kB",
+        "PIDs": "6"
+      },
+      {
+        "BlockIO": "266MB / 29.5MB",
+        "CPUPerc": "4.54%",
+        "Container": "c741cc0fa60d2d28d3f1953c5691bee40fc1cb8dd8e1215e867a735fbfcecf8a",
+        "ID": "c741cc0fa60d",
+        "MemPerc": "17.49%",
+        "MemUsage": "179.1MiB / 1GiB",
+        "Name": "pulsestream-redpanda-1",
+        "NetIO": "9.21MB / 20.6MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "14.95%",
+        "Container": "a704c1042696332f4a8b931e212831ebbafb974a438ef2a668d3e445e9aba0e2",
+        "ID": "a704c1042696",
+        "MemPerc": "3.51%",
+        "MemUsage": "17.96MiB / 512MiB",
+        "Name": "pulsestream-sink-dispatcher-1",
+        "NetIO": "60.6MB / 48.6MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "53.88%",
+        "Container": "087700bf031c6c61b5e0717bb902cebd0e401ee21b3f653e83be8067d9bd843e",
+        "ID": "087700bf031c",
+        "MemPerc": "7.13%",
+        "MemUsage": "54.78MiB / 768MiB",
+        "Name": "pulsestream-stream-processor-1",
+        "NetIO": "22.6MB / 83.8MB",
+        "PIDs": "15"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "4.06%",
+        "Container": "1e2a1241b705d6a4fbb069f5344d3a15b0be42d0979447b22d72923c80ac2760",
+        "ID": "1e2a1241b705",
+        "MemPerc": "3.25%",
+        "MemUsage": "8.332MiB / 256MiB",
+        "Name": "pulsestream-websocket-gateway-1",
+        "NetIO": "30.4kB / 53.5kB",
+        "PIDs": "9"
+      }
+    ]
+  },
+  {
+    "at": "2026-11-11T22:03:30.037169+00:00",
+    "containers": [
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.53%",
+        "Container": "37cf60ff967a567ffe6472b557c9bb06e7243b37fb8ecb4bd0d01c964fe8299a",
+        "ID": "37cf60ff967a",
+        "MemPerc": "3.46%",
+        "MemUsage": "8.863MiB / 256MiB",
+        "Name": "pulsestream-alert-service-1",
+        "NetIO": "1.05MB / 184kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.15%",
+        "Container": "4c65394ae02c679debb786eb1d4d82b4c41bc3258a1485dae4bdcaed758aea43",
+        "ID": "4c65394ae02c",
+        "MemPerc": "3.03%",
+        "MemUsage": "7.77MiB / 256MiB",
+        "Name": "pulsestream-analytics-api-1",
+        "NetIO": "34kB / 55.2kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "516MB / 371MB",
+        "CPUPerc": "38.38%",
+        "Container": "022f26979567320a469f3f511e5630026e2cb01b2f4d1376c28e059dcf83b252",
+        "ID": "022f26979567",
+        "MemPerc": "42.62%",
+        "MemUsage": "654.6MiB / 1.5GiB",
+        "Name": "pulsestream-clickhouse-1",
+        "NetIO": "48.2MB / 2.47MB",
+        "PIDs": "168"
+      },
+      {
+        "BlockIO": "9.73MB / 16.4kB",
+        "CPUPerc": "0.00%",
+        "Container": "62d543f99f100c96b592802cf6d7f8c32899784a7ed41129a1edb36259699e21",
+        "ID": "62d543f99f10",
+        "MemPerc": "8.65%",
+        "MemUsage": "11.07MiB / 128MiB",
+        "Name": "pulsestream-dashboard-1",
+        "NetIO": "40.9kB / 305kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "2.75GB / 231MB",
+        "CPUPerc": "0.26%",
+        "Container": "e07f4c2d1daced1d025e0bd8157a787b03cac62cb8e6b26ae2f741b886442c28",
+        "ID": "e07f4c2d1dac",
+        "MemPerc": "71.69%",
+        "MemUsage": "183.5MiB / 256MiB",
+        "Name": "pulsestream-grafana-1",
+        "NetIO": "28MB / 814kB",
+        "PIDs": "23"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "6.72%",
+        "Container": "7d33d24fccb9ec4e0516a0c0160ed1a21ebfe08a4734e7c3fe20a6756881b1ae",
+        "ID": "7d33d24fccb9",
+        "MemPerc": "6.06%",
+        "MemUsage": "15.51MiB / 256MiB",
+        "Name": "pulsestream-ingestion-gateway-1",
+        "NetIO": "29.9MB / 7.39MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "192MB / 0B",
+        "CPUPerc": "1.02%",
+        "Container": "6c7601e7acf95a0229e2f3729af9b2a1830fe7dfc25e261d196e72738fb56e04",
+        "ID": "6c7601e7acf9",
+        "MemPerc": "44.27%",
+        "MemUsage": "56.66MiB / 128MiB",
+        "Name": "pulsestream-otel-1",
+        "NetIO": "259kB / 26.1kB",
+        "PIDs": "10"
+      },
+      {
+        "BlockIO": "77.3MB / 337MB",
+        "CPUPerc": "38.03%",
+        "Container": "1f75ba3a756bf82c6f5fc5d97a68745ba7a3b8d9f3b1cd500d1a7ea1b9c13632",
+        "ID": "1f75ba3a756b",
+        "MemPerc": "27.11%",
+        "MemUsage": "138.8MiB / 512MiB",
+        "Name": "pulsestream-postgres-1",
+        "NetIO": "94.8MB / 85.4MB",
+        "PIDs": "18"
+      },
+      {
+        "BlockIO": "170MB / 1.09MB",
+        "CPUPerc": "0.46%",
+        "Container": "60864ef49c408aac68d28312aef2777b61762a3dafcf6d9b580054c81fb516b1",
+        "ID": "60864ef49c40",
+        "MemPerc": "29.04%",
+        "MemUsage": "74.34MiB / 256MiB",
+        "Name": "pulsestream-prometheus-1",
+        "NetIO": "16.7MB / 404kB",
+        "PIDs": "12"
+      },
+      {
+        "BlockIO": "59.8MB / 238kB",
+        "CPUPerc": "2.04%",
+        "Container": "b7ef8c6f1b8eb24aa4bf02c7c6c1ec4f5ed3f9aa4528606910234aacad3f1d7a",
+        "ID": "b7ef8c6f1b8e",
+        "MemPerc": "13.95%",
+        "MemUsage": "17.85MiB / 128MiB",
+        "Name": "pulsestream-redis-1",
+        "NetIO": "206kB / 67.6kB",
+        "PIDs": "6"
+      },
+      {
+        "BlockIO": "267MB / 30.8MB",
+        "CPUPerc": "4.93%",
+        "Container": "c741cc0fa60d2d28d3f1953c5691bee40fc1cb8dd8e1215e867a735fbfcecf8a",
+        "ID": "c741cc0fa60d",
+        "MemPerc": "17.53%",
+        "MemUsage": "179.5MiB / 1GiB",
+        "Name": "pulsestream-redpanda-1",
+        "NetIO": "9.7MB / 20.7MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "4.10%",
+        "Container": "a704c1042696332f4a8b931e212831ebbafb974a438ef2a668d3e445e9aba0e2",
+        "ID": "a704c1042696",
+        "MemPerc": "3.43%",
+        "MemUsage": "17.57MiB / 512MiB",
+        "Name": "pulsestream-sink-dispatcher-1",
+        "NetIO": "63.7MB / 50.9MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "33.16%",
+        "Container": "087700bf031c6c61b5e0717bb902cebd0e401ee21b3f653e83be8067d9bd843e",
+        "ID": "087700bf031c",
+        "MemPerc": "6.54%",
+        "MemUsage": "50.21MiB / 768MiB",
+        "Name": "pulsestream-stream-processor-1",
+        "NetIO": "23.5MB / 87.9MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "1e2a1241b705d6a4fbb069f5344d3a15b0be42d0979447b22d72923c80ac2760",
+        "ID": "1e2a1241b705",
+        "MemPerc": "3.25%",
+        "MemUsage": "8.32MiB / 256MiB",
+        "Name": "pulsestream-websocket-gateway-1",
+        "NetIO": "30.4kB / 53.5kB",
+        "PIDs": "9"
+      }
+    ]
+  },
+  {
+    "at": "2026-11-11T22:03:33.508042+00:00",
+    "containers": [
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.03%",
+        "Container": "37cf60ff967a567ffe6472b557c9bb06e7243b37fb8ecb4bd0d01c964fe8299a",
+        "ID": "37cf60ff967a",
+        "MemPerc": "3.18%",
+        "MemUsage": "8.137MiB / 256MiB",
+        "Name": "pulsestream-alert-service-1",
+        "NetIO": "1.12MB / 188kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "4c65394ae02c679debb786eb1d4d82b4c41bc3258a1485dae4bdcaed758aea43",
+        "ID": "4c65394ae02c",
+        "MemPerc": "3.03%",
+        "MemUsage": "7.77MiB / 256MiB",
+        "Name": "pulsestream-analytics-api-1",
+        "NetIO": "34kB / 55.2kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "516MB / 376MB",
+        "CPUPerc": "146.77%",
+        "Container": "022f26979567320a469f3f511e5630026e2cb01b2f4d1376c28e059dcf83b252",
+        "ID": "022f26979567",
+        "MemPerc": "44.63%",
+        "MemUsage": "685.5MiB / 1.5GiB",
+        "Name": "pulsestream-clickhouse-1",
+        "NetIO": "49.8MB / 2.7MB",
+        "PIDs": "171"
+      },
+      {
+        "BlockIO": "9.73MB / 16.4kB",
+        "CPUPerc": "0.00%",
+        "Container": "62d543f99f100c96b592802cf6d7f8c32899784a7ed41129a1edb36259699e21",
+        "ID": "62d543f99f10",
+        "MemPerc": "8.65%",
+        "MemUsage": "11.07MiB / 128MiB",
+        "Name": "pulsestream-dashboard-1",
+        "NetIO": "53.6kB / 319kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "2.75GB / 231MB",
+        "CPUPerc": "9.81%",
+        "Container": "e07f4c2d1daced1d025e0bd8157a787b03cac62cb8e6b26ae2f741b886442c28",
+        "ID": "e07f4c2d1dac",
+        "MemPerc": "71.86%",
+        "MemUsage": "184MiB / 256MiB",
+        "Name": "pulsestream-grafana-1",
+        "NetIO": "28MB / 814kB",
+        "PIDs": "23"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "5.06%",
+        "Container": "7d33d24fccb9ec4e0516a0c0160ed1a21ebfe08a4734e7c3fe20a6756881b1ae",
+        "ID": "7d33d24fccb9",
+        "MemPerc": "6.46%",
+        "MemUsage": "16.53MiB / 256MiB",
+        "Name": "pulsestream-ingestion-gateway-1",
+        "NetIO": "31.5MB / 7.77MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "192MB / 0B",
+        "CPUPerc": "0.12%",
+        "Container": "6c7601e7acf95a0229e2f3729af9b2a1830fe7dfc25e261d196e72738fb56e04",
+        "ID": "6c7601e7acf9",
+        "MemPerc": "44.14%",
+        "MemUsage": "56.5MiB / 128MiB",
+        "Name": "pulsestream-otel-1",
+        "NetIO": "275kB / 27kB",
+        "PIDs": "10"
+      },
+      {
+        "BlockIO": "77.4MB / 343MB",
+        "CPUPerc": "42.83%",
+        "Container": "1f75ba3a756bf82c6f5fc5d97a68745ba7a3b8d9f3b1cd500d1a7ea1b9c13632",
+        "ID": "1f75ba3a756b",
+        "MemPerc": "27.49%",
+        "MemUsage": "140.8MiB / 512MiB",
+        "Name": "pulsestream-postgres-1",
+        "NetIO": "98.3MB / 88.6MB",
+        "PIDs": "18"
+      },
+      {
+        "BlockIO": "170MB / 1.1MB",
+        "CPUPerc": "0.18%",
+        "Container": "60864ef49c408aac68d28312aef2777b61762a3dafcf6d9b580054c81fb516b1",
+        "ID": "60864ef49c40",
+        "MemPerc": "29.00%",
+        "MemUsage": "74.25MiB / 256MiB",
+        "Name": "pulsestream-prometheus-1",
+        "NetIO": "16.8MB / 406kB",
+        "PIDs": "12"
+      },
+      {
+        "BlockIO": "59.8MB / 238kB",
+        "CPUPerc": "0.45%",
+        "Container": "b7ef8c6f1b8eb24aa4bf02c7c6c1ec4f5ed3f9aa4528606910234aacad3f1d7a",
+        "ID": "b7ef8c6f1b8e",
+        "MemPerc": "14.15%",
+        "MemUsage": "18.11MiB / 128MiB",
+        "Name": "pulsestream-redis-1",
+        "NetIO": "217kB / 70.2kB",
+        "PIDs": "6"
+      },
+      {
+        "BlockIO": "271MB / 31.9MB",
+        "CPUPerc": "6.68%",
+        "Container": "c741cc0fa60d2d28d3f1953c5691bee40fc1cb8dd8e1215e867a735fbfcecf8a",
+        "ID": "c741cc0fa60d",
+        "MemPerc": "17.77%",
+        "MemUsage": "182MiB / 1GiB",
+        "Name": "pulsestream-redpanda-1",
+        "NetIO": "10.2MB / 20.8MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "4.02%",
+        "Container": "a704c1042696332f4a8b931e212831ebbafb974a438ef2a668d3e445e9aba0e2",
+        "ID": "a704c1042696",
+        "MemPerc": "3.51%",
+        "MemUsage": "17.97MiB / 512MiB",
+        "Name": "pulsestream-sink-dispatcher-1",
+        "NetIO": "66.2MB / 52.8MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "30.89%",
+        "Container": "087700bf031c6c61b5e0717bb902cebd0e401ee21b3f653e83be8067d9bd843e",
+        "ID": "087700bf031c",
+        "MemPerc": "6.66%",
+        "MemUsage": "51.12MiB / 768MiB",
+        "Name": "pulsestream-stream-processor-1",
+        "NetIO": "24.3MB / 91.4MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "1e2a1241b705d6a4fbb069f5344d3a15b0be42d0979447b22d72923c80ac2760",
+        "ID": "1e2a1241b705",
+        "MemPerc": "3.29%",
+        "MemUsage": "8.426MiB / 256MiB",
+        "Name": "pulsestream-websocket-gateway-1",
+        "NetIO": "31.1kB / 56.3kB",
+        "PIDs": "9"
+      }
+    ]
+  },
+  {
+    "at": "2026-11-11T22:03:36.731696+00:00",
+    "containers": [
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "3.88%",
+        "Container": "37cf60ff967a567ffe6472b557c9bb06e7243b37fb8ecb4bd0d01c964fe8299a",
+        "ID": "37cf60ff967a",
+        "MemPerc": "3.10%",
+        "MemUsage": "7.926MiB / 256MiB",
+        "Name": "pulsestream-alert-service-1",
+        "NetIO": "1.26MB / 200kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.05%",
+        "Container": "4c65394ae02c679debb786eb1d4d82b4c41bc3258a1485dae4bdcaed758aea43",
+        "ID": "4c65394ae02c",
+        "MemPerc": "3.07%",
+        "MemUsage": "7.863MiB / 256MiB",
+        "Name": "pulsestream-analytics-api-1",
+        "NetIO": "34.5kB / 57.5kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "516MB / 376MB",
+        "CPUPerc": "27.98%",
+        "Container": "022f26979567320a469f3f511e5630026e2cb01b2f4d1376c28e059dcf83b252",
+        "ID": "022f26979567",
+        "MemPerc": "45.42%",
+        "MemUsage": "697.7MiB / 1.5GiB",
+        "Name": "pulsestream-clickhouse-1",
+        "NetIO": "52MB / 2.79MB",
+        "PIDs": "169"
+      },
+      {
+        "BlockIO": "9.73MB / 16.4kB",
+        "CPUPerc": "0.00%",
+        "Container": "62d543f99f100c96b592802cf6d7f8c32899784a7ed41129a1edb36259699e21",
+        "ID": "62d543f99f10",
+        "MemPerc": "8.65%",
+        "MemUsage": "11.07MiB / 128MiB",
+        "Name": "pulsestream-dashboard-1",
+        "NetIO": "53.6kB / 319kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "2.75GB / 231MB",
+        "CPUPerc": "0.23%",
+        "Container": "e07f4c2d1daced1d025e0bd8157a787b03cac62cb8e6b26ae2f741b886442c28",
+        "ID": "e07f4c2d1dac",
+        "MemPerc": "71.83%",
+        "MemUsage": "183.9MiB / 256MiB",
+        "Name": "pulsestream-grafana-1",
+        "NetIO": "28MB / 814kB",
+        "PIDs": "23"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "4.16%",
+        "Container": "7d33d24fccb9ec4e0516a0c0160ed1a21ebfe08a4734e7c3fe20a6756881b1ae",
+        "ID": "7d33d24fccb9",
+        "MemPerc": "6.19%",
+        "MemUsage": "15.84MiB / 256MiB",
+        "Name": "pulsestream-ingestion-gateway-1",
+        "NetIO": "33MB / 8.15MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "192MB / 0B",
+        "CPUPerc": "0.60%",
+        "Container": "6c7601e7acf95a0229e2f3729af9b2a1830fe7dfc25e261d196e72738fb56e04",
+        "ID": "6c7601e7acf9",
+        "MemPerc": "44.27%",
+        "MemUsage": "56.67MiB / 128MiB",
+        "Name": "pulsestream-otel-1",
+        "NetIO": "295kB / 27.7kB",
+        "PIDs": "10"
+      },
+      {
+        "BlockIO": "77.4MB / 365MB",
+        "CPUPerc": "70.13%",
+        "Container": "1f75ba3a756bf82c6f5fc5d97a68745ba7a3b8d9f3b1cd500d1a7ea1b9c13632",
+        "ID": "1f75ba3a756b",
+        "MemPerc": "28.74%",
+        "MemUsage": "147.2MiB / 512MiB",
+        "Name": "pulsestream-postgres-1",
+        "NetIO": "103MB / 92.4MB",
+        "PIDs": "19"
+      },
+      {
+        "BlockIO": "170MB / 1.1MB",
+        "CPUPerc": "0.42%",
+        "Container": "60864ef49c408aac68d28312aef2777b61762a3dafcf6d9b580054c81fb516b1",
+        "ID": "60864ef49c40",
+        "MemPerc": "28.93%",
+        "MemUsage": "74.06MiB / 256MiB",
+        "Name": "pulsestream-prometheus-1",
+        "NetIO": "16.9MB / 409kB",
+        "PIDs": "12"
+      },
+      {
+        "BlockIO": "59.8MB / 238kB",
+        "CPUPerc": "5.06%",
+        "Container": "b7ef8c6f1b8eb24aa4bf02c7c6c1ec4f5ed3f9aa4528606910234aacad3f1d7a",
+        "ID": "b7ef8c6f1b8e",
+        "MemPerc": "14.15%",
+        "MemUsage": "18.11MiB / 128MiB",
+        "Name": "pulsestream-redis-1",
+        "NetIO": "225kB / 72.7kB",
+        "PIDs": "6"
+      },
+      {
+        "BlockIO": "271MB / 33.1MB",
+        "CPUPerc": "3.09%",
+        "Container": "c741cc0fa60d2d28d3f1953c5691bee40fc1cb8dd8e1215e867a735fbfcecf8a",
+        "ID": "c741cc0fa60d",
+        "MemPerc": "17.87%",
+        "MemUsage": "182.9MiB / 1GiB",
+        "Name": "pulsestream-redpanda-1",
+        "NetIO": "10.6MB / 20.9MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "11.27%",
+        "Container": "a704c1042696332f4a8b931e212831ebbafb974a438ef2a668d3e445e9aba0e2",
+        "ID": "a704c1042696",
+        "MemPerc": "3.40%",
+        "MemUsage": "17.42MiB / 512MiB",
+        "Name": "pulsestream-sink-dispatcher-1",
+        "NetIO": "69.1MB / 55.2MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "52.79%",
+        "Container": "087700bf031c6c61b5e0717bb902cebd0e401ee21b3f653e83be8067d9bd843e",
+        "ID": "087700bf031c",
+        "MemPerc": "7.15%",
+        "MemUsage": "54.89MiB / 768MiB",
+        "Name": "pulsestream-stream-processor-1",
+        "NetIO": "25.3MB / 96.5MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "4.09%",
+        "Container": "1e2a1241b705d6a4fbb069f5344d3a15b0be42d0979447b22d72923c80ac2760",
+        "ID": "1e2a1241b705",
+        "MemPerc": "3.37%",
+        "MemUsage": "8.637MiB / 256MiB",
+        "Name": "pulsestream-websocket-gateway-1",
+        "NetIO": "33.5kB / 60kB",
+        "PIDs": "9"
+      }
+    ]
+  },
+  {
+    "at": "2026-11-11T22:03:39.918698+00:00",
+    "containers": [
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "1.96%",
+        "Container": "37cf60ff967a567ffe6472b557c9bb06e7243b37fb8ecb4bd0d01c964fe8299a",
+        "ID": "37cf60ff967a",
+        "MemPerc": "3.33%",
+        "MemUsage": "8.52MiB / 256MiB",
+        "Name": "pulsestream-alert-service-1",
+        "NetIO": "1.42MB / 212kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.23%",
+        "Container": "4c65394ae02c679debb786eb1d4d82b4c41bc3258a1485dae4bdcaed758aea43",
+        "ID": "4c65394ae02c",
+        "MemPerc": "3.12%",
+        "MemUsage": "8MiB / 256MiB",
+        "Name": "pulsestream-analytics-api-1",
+        "NetIO": "36.8kB / 61.2kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "522MB / 376MB",
+        "CPUPerc": "51.19%",
+        "Container": "022f26979567320a469f3f511e5630026e2cb01b2f4d1376c28e059dcf83b252",
+        "ID": "022f26979567",
+        "MemPerc": "40.81%",
+        "MemUsage": "626.9MiB / 1.5GiB",
+        "Name": "pulsestream-clickhouse-1",
+        "NetIO": "55.9MB / 2.98MB",
+        "PIDs": "172"
+      },
+      {
+        "BlockIO": "9.73MB / 16.4kB",
+        "CPUPerc": "0.00%",
+        "Container": "62d543f99f100c96b592802cf6d7f8c32899784a7ed41129a1edb36259699e21",
+        "ID": "62d543f99f10",
+        "MemPerc": "8.63%",
+        "MemUsage": "11.05MiB / 128MiB",
+        "Name": "pulsestream-dashboard-1",
+        "NetIO": "53.6kB / 319kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "2.75GB / 231MB",
+        "CPUPerc": "0.24%",
+        "Container": "e07f4c2d1daced1d025e0bd8157a787b03cac62cb8e6b26ae2f741b886442c28",
+        "ID": "e07f4c2d1dac",
+        "MemPerc": "71.79%",
+        "MemUsage": "183.8MiB / 256MiB",
+        "Name": "pulsestream-grafana-1",
+        "NetIO": "28MB / 814kB",
+        "PIDs": "23"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "5.78%",
+        "Container": "7d33d24fccb9ec4e0516a0c0160ed1a21ebfe08a4734e7c3fe20a6756881b1ae",
+        "ID": "7d33d24fccb9",
+        "MemPerc": "6.37%",
+        "MemUsage": "16.3MiB / 256MiB",
+        "Name": "pulsestream-ingestion-gateway-1",
+        "NetIO": "34.4MB / 8.5MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "192MB / 0B",
+        "CPUPerc": "0.11%",
+        "Container": "6c7601e7acf95a0229e2f3729af9b2a1830fe7dfc25e261d196e72738fb56e04",
+        "ID": "6c7601e7acf9",
+        "MemPerc": "44.28%",
+        "MemUsage": "56.68MiB / 128MiB",
+        "Name": "pulsestream-otel-1",
+        "NetIO": "295kB / 27.7kB",
+        "PIDs": "10"
+      },
+      {
+        "BlockIO": "77.4MB / 376MB",
+        "CPUPerc": "50.18%",
+        "Container": "1f75ba3a756bf82c6f5fc5d97a68745ba7a3b8d9f3b1cd500d1a7ea1b9c13632",
+        "ID": "1f75ba3a756b",
+        "MemPerc": "29.14%",
+        "MemUsage": "149.2MiB / 512MiB",
+        "Name": "pulsestream-postgres-1",
+        "NetIO": "110MB / 99.1MB",
+        "PIDs": "19"
+      },
+      {
+        "BlockIO": "170MB / 1.1MB",
+        "CPUPerc": "0.20%",
+        "Container": "60864ef49c408aac68d28312aef2777b61762a3dafcf6d9b580054c81fb516b1",
+        "ID": "60864ef49c40",
+        "MemPerc": "28.83%",
+        "MemUsage": "73.8MiB / 256MiB",
+        "Name": "pulsestream-prometheus-1",
+        "NetIO": "17.1MB / 412kB",
+        "PIDs": "12"
+      },
+      {
+        "BlockIO": "59.8MB / 238kB",
+        "CPUPerc": "0.38%",
+        "Container": "b7ef8c6f1b8eb24aa4bf02c7c6c1ec4f5ed3f9aa4528606910234aacad3f1d7a",
+        "ID": "b7ef8c6f1b8e",
+        "MemPerc": "14.25%",
+        "MemUsage": "18.24MiB / 128MiB",
+        "Name": "pulsestream-redis-1",
+        "NetIO": "233kB / 75kB",
+        "PIDs": "6"
+      },
+      {
+        "BlockIO": "271MB / 34.7MB",
+        "CPUPerc": "3.74%",
+        "Container": "c741cc0fa60d2d28d3f1953c5691bee40fc1cb8dd8e1215e867a735fbfcecf8a",
+        "ID": "c741cc0fa60d",
+        "MemPerc": "17.89%",
+        "MemUsage": "183.2MiB / 1GiB",
+        "Name": "pulsestream-redpanda-1",
+        "NetIO": "11.2MB / 21.1MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "4.94%",
+        "Container": "a704c1042696332f4a8b931e212831ebbafb974a438ef2a668d3e445e9aba0e2",
+        "ID": "a704c1042696",
+        "MemPerc": "3.41%",
+        "MemUsage": "17.45MiB / 512MiB",
+        "Name": "pulsestream-sink-dispatcher-1",
+        "NetIO": "74.5MB / 59.5MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "49.43%",
+        "Container": "087700bf031c6c61b5e0717bb902cebd0e401ee21b3f653e83be8067d9bd843e",
+        "ID": "087700bf031c",
+        "MemPerc": "7.05%",
+        "MemUsage": "54.16MiB / 768MiB",
+        "Name": "pulsestream-stream-processor-1",
+        "NetIO": "26.7MB / 103MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "1e2a1241b705d6a4fbb069f5344d3a15b0be42d0979447b22d72923c80ac2760",
+        "ID": "1e2a1241b705",
+        "MemPerc": "3.37%",
+        "MemUsage": "8.633MiB / 256MiB",
+        "Name": "pulsestream-websocket-gateway-1",
+        "NetIO": "33.5kB / 60kB",
+        "PIDs": "9"
+      }
+    ]
+  },
+  {
+    "at": "2026-11-11T22:03:43.068786+00:00",
+    "containers": [
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "37cf60ff967a567ffe6472b557c9bb06e7243b37fb8ecb4bd0d01c964fe8299a",
+        "ID": "37cf60ff967a",
+        "MemPerc": "3.29%",
+        "MemUsage": "8.426MiB / 256MiB",
+        "Name": "pulsestream-alert-service-1",
+        "NetIO": "1.49MB / 216kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "4c65394ae02c679debb786eb1d4d82b4c41bc3258a1485dae4bdcaed758aea43",
+        "ID": "4c65394ae02c",
+        "MemPerc": "3.12%",
+        "MemUsage": "8MiB / 256MiB",
+        "Name": "pulsestream-analytics-api-1",
+        "NetIO": "36.8kB / 61.2kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "531MB / 376MB",
+        "CPUPerc": "46.82%",
+        "Container": "022f26979567320a469f3f511e5630026e2cb01b2f4d1376c28e059dcf83b252",
+        "ID": "022f26979567",
+        "MemPerc": "48.28%",
+        "MemUsage": "741.7MiB / 1.5GiB",
+        "Name": "pulsestream-clickhouse-1",
+        "NetIO": "60.9MB / 3.11MB",
+        "PIDs": "172"
+      },
+      {
+        "BlockIO": "9.73MB / 16.4kB",
+        "CPUPerc": "0.00%",
+        "Container": "62d543f99f100c96b592802cf6d7f8c32899784a7ed41129a1edb36259699e21",
+        "ID": "62d543f99f10",
+        "MemPerc": "8.60%",
+        "MemUsage": "11.01MiB / 128MiB",
+        "Name": "pulsestream-dashboard-1",
+        "NetIO": "53.6kB / 319kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "2.75GB / 231MB",
+        "CPUPerc": "2.12%",
+        "Container": "e07f4c2d1daced1d025e0bd8157a787b03cac62cb8e6b26ae2f741b886442c28",
+        "ID": "e07f4c2d1dac",
+        "MemPerc": "71.80%",
+        "MemUsage": "183.8MiB / 256MiB",
+        "Name": "pulsestream-grafana-1",
+        "NetIO": "28MB / 814kB",
+        "PIDs": "23"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "3.05%",
+        "Container": "7d33d24fccb9ec4e0516a0c0160ed1a21ebfe08a4734e7c3fe20a6756881b1ae",
+        "ID": "7d33d24fccb9",
+        "MemPerc": "5.97%",
+        "MemUsage": "15.28MiB / 256MiB",
+        "Name": "pulsestream-ingestion-gateway-1",
+        "NetIO": "35.8MB / 8.84MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "192MB / 0B",
+        "CPUPerc": "0.22%",
+        "Container": "6c7601e7acf95a0229e2f3729af9b2a1830fe7dfc25e261d196e72738fb56e04",
+        "ID": "6c7601e7acf9",
+        "MemPerc": "44.27%",
+        "MemUsage": "56.67MiB / 128MiB",
+        "Name": "pulsestream-otel-1",
+        "NetIO": "330kB / 28.4kB",
+        "PIDs": "10"
+      },
+      {
+        "BlockIO": "77.4MB / 403MB",
+        "CPUPerc": "49.63%",
+        "Container": "1f75ba3a756bf82c6f5fc5d97a68745ba7a3b8d9f3b1cd500d1a7ea1b9c13632",
+        "ID": "1f75ba3a756b",
+        "MemPerc": "29.43%",
+        "MemUsage": "150.7MiB / 512MiB",
+        "Name": "pulsestream-postgres-1",
+        "NetIO": "120MB / 108MB",
+        "PIDs": "19"
+      },
+      {
+        "BlockIO": "170MB / 1.1MB",
+        "CPUPerc": "0.25%",
+        "Container": "60864ef49c408aac68d28312aef2777b61762a3dafcf6d9b580054c81fb516b1",
+        "ID": "60864ef49c40",
+        "MemPerc": "28.92%",
+        "MemUsage": "74.04MiB / 256MiB",
+        "Name": "pulsestream-prometheus-1",
+        "NetIO": "17.1MB / 414kB",
+        "PIDs": "12"
+      },
+      {
+        "BlockIO": "59.8MB / 238kB",
+        "CPUPerc": "0.37%",
+        "Container": "b7ef8c6f1b8eb24aa4bf02c7c6c1ec4f5ed3f9aa4528606910234aacad3f1d7a",
+        "ID": "b7ef8c6f1b8e",
+        "MemPerc": "13.95%",
+        "MemUsage": "17.86MiB / 128MiB",
+        "Name": "pulsestream-redis-1",
+        "NetIO": "241kB / 77.4kB",
+        "PIDs": "6"
+      },
+      {
+        "BlockIO": "271MB / 36MB",
+        "CPUPerc": "3.12%",
+        "Container": "c741cc0fa60d2d28d3f1953c5691bee40fc1cb8dd8e1215e867a735fbfcecf8a",
+        "ID": "c741cc0fa60d",
+        "MemPerc": "18.28%",
+        "MemUsage": "187.2MiB / 1GiB",
+        "Name": "pulsestream-redpanda-1",
+        "NetIO": "11.8MB / 24.2MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "4.35%",
+        "Container": "a704c1042696332f4a8b931e212831ebbafb974a438ef2a668d3e445e9aba0e2",
+        "ID": "a704c1042696",
+        "MemPerc": "3.45%",
+        "MemUsage": "17.68MiB / 512MiB",
+        "Name": "pulsestream-sink-dispatcher-1",
+        "NetIO": "81.3MB / 64.9MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "45.31%",
+        "Container": "087700bf031c6c61b5e0717bb902cebd0e401ee21b3f653e83be8067d9bd843e",
+        "ID": "087700bf031c",
+        "MemPerc": "9.55%",
+        "MemUsage": "73.32MiB / 768MiB",
+        "Name": "pulsestream-stream-processor-1",
+        "NetIO": "31.8MB / 113MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "1e2a1241b705d6a4fbb069f5344d3a15b0be42d0979447b22d72923c80ac2760",
+        "ID": "1e2a1241b705",
+        "MemPerc": "3.38%",
+        "MemUsage": "8.648MiB / 256MiB",
+        "Name": "pulsestream-websocket-gateway-1",
+        "NetIO": "34kB / 62.3kB",
+        "PIDs": "9"
+      }
+    ]
+  },
+  {
+    "at": "2026-11-11T22:03:46.264234+00:00",
+    "containers": [
+      {
+        "BlockIO": "1.09MB / 0B",
+        "CPUPerc": "3.07%",
+        "Container": "37cf60ff967a567ffe6472b557c9bb06e7243b37fb8ecb4bd0d01c964fe8299a",
+        "ID": "37cf60ff967a",
+        "MemPerc": "4.19%",
+        "MemUsage": "10.73MiB / 256MiB",
+        "Name": "pulsestream-alert-service-1",
+        "NetIO": "1.66MB / 231kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.02%",
+        "Container": "4c65394ae02c679debb786eb1d4d82b4c41bc3258a1485dae4bdcaed758aea43",
+        "ID": "4c65394ae02c",
+        "MemPerc": "3.16%",
+        "MemUsage": "8.102MiB / 256MiB",
+        "Name": "pulsestream-analytics-api-1",
+        "NetIO": "37.3kB / 63.6kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "531MB / 453MB",
+        "CPUPerc": "28.62%",
+        "Container": "022f26979567320a469f3f511e5630026e2cb01b2f4d1376c28e059dcf83b252",
+        "ID": "022f26979567",
+        "MemPerc": "37.12%",
+        "MemUsage": "570.2MiB / 1.5GiB",
+        "Name": "pulsestream-clickhouse-1",
+        "NetIO": "65.6MB / 3.31MB",
+        "PIDs": "172"
+      },
+      {
+        "BlockIO": "9.73MB / 16.4kB",
+        "CPUPerc": "0.00%",
+        "Container": "62d543f99f100c96b592802cf6d7f8c32899784a7ed41129a1edb36259699e21",
+        "ID": "62d543f99f10",
+        "MemPerc": "8.64%",
+        "MemUsage": "11.06MiB / 128MiB",
+        "Name": "pulsestream-dashboard-1",
+        "NetIO": "53.6kB / 319kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "2.75GB / 231MB",
+        "CPUPerc": "0.66%",
+        "Container": "e07f4c2d1daced1d025e0bd8157a787b03cac62cb8e6b26ae2f741b886442c28",
+        "ID": "e07f4c2d1dac",
+        "MemPerc": "71.76%",
+        "MemUsage": "183.7MiB / 256MiB",
+        "Name": "pulsestream-grafana-1",
+        "NetIO": "28MB / 814kB",
+        "PIDs": "23"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "2.90%",
+        "Container": "7d33d24fccb9ec4e0516a0c0160ed1a21ebfe08a4734e7c3fe20a6756881b1ae",
+        "ID": "7d33d24fccb9",
+        "MemPerc": "5.83%",
+        "MemUsage": "14.92MiB / 256MiB",
+        "Name": "pulsestream-ingestion-gateway-1",
+        "NetIO": "37.2MB / 9.19MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "192MB / 0B",
+        "CPUPerc": "1.19%",
+        "Container": "6c7601e7acf95a0229e2f3729af9b2a1830fe7dfc25e261d196e72738fb56e04",
+        "ID": "6c7601e7acf9",
+        "MemPerc": "44.49%",
+        "MemUsage": "56.94MiB / 128MiB",
+        "Name": "pulsestream-otel-1",
+        "NetIO": "371kB / 29.1kB",
+        "PIDs": "10"
+      },
+      {
+        "BlockIO": "77.4MB / 423MB",
+        "CPUPerc": "36.50%",
+        "Container": "1f75ba3a756bf82c6f5fc5d97a68745ba7a3b8d9f3b1cd500d1a7ea1b9c13632",
+        "ID": "1f75ba3a756b",
+        "MemPerc": "30.27%",
+        "MemUsage": "155MiB / 512MiB",
+        "Name": "pulsestream-postgres-1",
+        "NetIO": "129MB / 116MB",
+        "PIDs": "19"
+      },
+      {
+        "BlockIO": "170MB / 1.13MB",
+        "CPUPerc": "0.27%",
+        "Container": "60864ef49c408aac68d28312aef2777b61762a3dafcf6d9b580054c81fb516b1",
+        "ID": "60864ef49c40",
+        "MemPerc": "28.81%",
+        "MemUsage": "73.75MiB / 256MiB",
+        "Name": "pulsestream-prometheus-1",
+        "NetIO": "17.2MB / 418kB",
+        "PIDs": "12"
+      },
+      {
+        "BlockIO": "59.8MB / 238kB",
+        "CPUPerc": "0.37%",
+        "Container": "b7ef8c6f1b8eb24aa4bf02c7c6c1ec4f5ed3f9aa4528606910234aacad3f1d7a",
+        "ID": "b7ef8c6f1b8e",
+        "MemPerc": "14.05%",
+        "MemUsage": "17.99MiB / 128MiB",
+        "Name": "pulsestream-redis-1",
+        "NetIO": "249kB / 79.9kB",
+        "PIDs": "6"
+      },
+      {
+        "BlockIO": "271MB / 37.3MB",
+        "CPUPerc": "2.55%",
+        "Container": "c741cc0fa60d2d28d3f1953c5691bee40fc1cb8dd8e1215e867a735fbfcecf8a",
+        "ID": "c741cc0fa60d",
+        "MemPerc": "18.29%",
+        "MemUsage": "187.3MiB / 1GiB",
+        "Name": "pulsestream-redpanda-1",
+        "NetIO": "12.3MB / 24.4MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "3.70%",
+        "Container": "a704c1042696332f4a8b931e212831ebbafb974a438ef2a668d3e445e9aba0e2",
+        "ID": "a704c1042696",
+        "MemPerc": "3.76%",
+        "MemUsage": "19.24MiB / 512MiB",
+        "Name": "pulsestream-sink-dispatcher-1",
+        "NetIO": "87.4MB / 70MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "35.87%",
+        "Container": "087700bf031c6c61b5e0717bb902cebd0e401ee21b3f653e83be8067d9bd843e",
+        "ID": "087700bf031c",
+        "MemPerc": "8.48%",
+        "MemUsage": "65.09MiB / 768MiB",
+        "Name": "pulsestream-stream-processor-1",
+        "NetIO": "33.8MB / 122MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.22%",
+        "Container": "1e2a1241b705d6a4fbb069f5344d3a15b0be42d0979447b22d72923c80ac2760",
+        "ID": "1e2a1241b705",
+        "MemPerc": "3.48%",
+        "MemUsage": "8.898MiB / 256MiB",
+        "Name": "pulsestream-websocket-gateway-1",
+        "NetIO": "34.6kB / 64.8kB",
+        "PIDs": "9"
+      }
+    ]
+  },
+  {
+    "at": "2026-11-11T22:03:49.399442+00:00",
+    "containers": [
+      {
+        "BlockIO": "1.09MB / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "37cf60ff967a567ffe6472b557c9bb06e7243b37fb8ecb4bd0d01c964fe8299a",
+        "ID": "37cf60ff967a",
+        "MemPerc": "3.47%",
+        "MemUsage": "8.891MiB / 256MiB",
+        "Name": "pulsestream-alert-service-1",
+        "NetIO": "1.74MB / 236kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "4c65394ae02c679debb786eb1d4d82b4c41bc3258a1485dae4bdcaed758aea43",
+        "ID": "4c65394ae02c",
+        "MemPerc": "3.18%",
+        "MemUsage": "8.137MiB / 256MiB",
+        "Name": "pulsestream-analytics-api-1",
+        "NetIO": "39.2kB / 65kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "539MB / 455MB",
+        "CPUPerc": "60.13%",
+        "Container": "022f26979567320a469f3f511e5630026e2cb01b2f4d1376c28e059dcf83b252",
+        "ID": "022f26979567",
+        "MemPerc": "37.09%",
+        "MemUsage": "569.7MiB / 1.5GiB",
+        "Name": "pulsestream-clickhouse-1",
+        "NetIO": "70.3MB / 3.52MB",
+        "PIDs": "172"
+      },
+      {
+        "BlockIO": "9.73MB / 16.4kB",
+        "CPUPerc": "0.00%",
+        "Container": "62d543f99f100c96b592802cf6d7f8c32899784a7ed41129a1edb36259699e21",
+        "ID": "62d543f99f10",
+        "MemPerc": "8.64%",
+        "MemUsage": "11.06MiB / 128MiB",
+        "Name": "pulsestream-dashboard-1",
+        "NetIO": "53.6kB / 319kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "2.75GB / 231MB",
+        "CPUPerc": "0.25%",
+        "Container": "e07f4c2d1daced1d025e0bd8157a787b03cac62cb8e6b26ae2f741b886442c28",
+        "ID": "e07f4c2d1dac",
+        "MemPerc": "71.75%",
+        "MemUsage": "183.7MiB / 256MiB",
+        "Name": "pulsestream-grafana-1",
+        "NetIO": "28MB / 814kB",
+        "PIDs": "23"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "3.26%",
+        "Container": "7d33d24fccb9ec4e0516a0c0160ed1a21ebfe08a4734e7c3fe20a6756881b1ae",
+        "ID": "7d33d24fccb9",
+        "MemPerc": "6.08%",
+        "MemUsage": "15.56MiB / 256MiB",
+        "Name": "pulsestream-ingestion-gateway-1",
+        "NetIO": "38.7MB / 9.54MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "192MB / 0B",
+        "CPUPerc": "0.11%",
+        "Container": "6c7601e7acf95a0229e2f3729af9b2a1830fe7dfc25e261d196e72738fb56e04",
+        "ID": "6c7601e7acf9",
+        "MemPerc": "44.64%",
+        "MemUsage": "57.14MiB / 128MiB",
+        "Name": "pulsestream-otel-1",
+        "NetIO": "372kB / 29.3kB",
+        "PIDs": "10"
+      },
+      {
+        "BlockIO": "77.4MB / 449MB",
+        "CPUPerc": "49.54%",
+        "Container": "1f75ba3a756bf82c6f5fc5d97a68745ba7a3b8d9f3b1cd500d1a7ea1b9c13632",
+        "ID": "1f75ba3a756b",
+        "MemPerc": "29.94%",
+        "MemUsage": "153.3MiB / 512MiB",
+        "Name": "pulsestream-postgres-1",
+        "NetIO": "137MB / 124MB",
+        "PIDs": "19"
+      },
+      {
+        "BlockIO": "170MB / 1.13MB",
+        "CPUPerc": "0.24%",
+        "Container": "60864ef49c408aac68d28312aef2777b61762a3dafcf6d9b580054c81fb516b1",
+        "ID": "60864ef49c40",
+        "MemPerc": "28.81%",
+        "MemUsage": "73.76MiB / 256MiB",
+        "Name": "pulsestream-prometheus-1",
+        "NetIO": "17.4MB / 420kB",
+        "PIDs": "12"
+      },
+      {
+        "BlockIO": "59.8MB / 238kB",
+        "CPUPerc": "0.33%",
+        "Container": "b7ef8c6f1b8eb24aa4bf02c7c6c1ec4f5ed3f9aa4528606910234aacad3f1d7a",
+        "ID": "b7ef8c6f1b8e",
+        "MemPerc": "14.25%",
+        "MemUsage": "18.24MiB / 128MiB",
+        "Name": "pulsestream-redis-1",
+        "NetIO": "257kB / 82.5kB",
+        "PIDs": "6"
+      },
+      {
+        "BlockIO": "272MB / 38.6MB",
+        "CPUPerc": "3.47%",
+        "Container": "c741cc0fa60d2d28d3f1953c5691bee40fc1cb8dd8e1215e867a735fbfcecf8a",
+        "ID": "c741cc0fa60d",
+        "MemPerc": "18.34%",
+        "MemUsage": "187.8MiB / 1GiB",
+        "Name": "pulsestream-redpanda-1",
+        "NetIO": "12.9MB / 24.6MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "4.54%",
+        "Container": "a704c1042696332f4a8b931e212831ebbafb974a438ef2a668d3e445e9aba0e2",
+        "ID": "a704c1042696",
+        "MemPerc": "3.39%",
+        "MemUsage": "17.34MiB / 512MiB",
+        "Name": "pulsestream-sink-dispatcher-1",
+        "NetIO": "93.4MB / 75.1MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "51.08%",
+        "Container": "087700bf031c6c61b5e0717bb902cebd0e401ee21b3f653e83be8067d9bd843e",
+        "ID": "087700bf031c",
+        "MemPerc": "8.58%",
+        "MemUsage": "65.89MiB / 768MiB",
+        "Name": "pulsestream-stream-processor-1",
+        "NetIO": "35.7MB / 130MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "1e2a1241b705d6a4fbb069f5344d3a15b0be42d0979447b22d72923c80ac2760",
+        "ID": "1e2a1241b705",
+        "MemPerc": "3.38%",
+        "MemUsage": "8.656MiB / 256MiB",
+        "Name": "pulsestream-websocket-gateway-1",
+        "NetIO": "36.4kB / 66.2kB",
+        "PIDs": "9"
+      }
+    ]
+  },
+  {
+    "at": "2026-11-11T22:03:52.590571+00:00",
+    "containers": [
+      {
+        "BlockIO": "1.09MB / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "37cf60ff967a567ffe6472b557c9bb06e7243b37fb8ecb4bd0d01c964fe8299a",
+        "ID": "37cf60ff967a",
+        "MemPerc": "3.46%",
+        "MemUsage": "8.855MiB / 256MiB",
+        "Name": "pulsestream-alert-service-1",
+        "NetIO": "1.92MB / 249kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "4c65394ae02c679debb786eb1d4d82b4c41bc3258a1485dae4bdcaed758aea43",
+        "ID": "4c65394ae02c",
+        "MemPerc": "3.22%",
+        "MemUsage": "8.238MiB / 256MiB",
+        "Name": "pulsestream-analytics-api-1",
+        "NetIO": "39.7kB / 67.4kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "539MB / 455MB",
+        "CPUPerc": "45.32%",
+        "Container": "022f26979567320a469f3f511e5630026e2cb01b2f4d1376c28e059dcf83b252",
+        "ID": "022f26979567",
+        "MemPerc": "48.76%",
+        "MemUsage": "748.9MiB / 1.5GiB",
+        "Name": "pulsestream-clickhouse-1",
+        "NetIO": "75.6MB / 3.65MB",
+        "PIDs": "172"
+      },
+      {
+        "BlockIO": "9.73MB / 16.4kB",
+        "CPUPerc": "0.00%",
+        "Container": "62d543f99f100c96b592802cf6d7f8c32899784a7ed41129a1edb36259699e21",
+        "ID": "62d543f99f10",
+        "MemPerc": "8.64%",
+        "MemUsage": "11.06MiB / 128MiB",
+        "Name": "pulsestream-dashboard-1",
+        "NetIO": "53.6kB / 319kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "2.75GB / 231MB",
+        "CPUPerc": "2.27%",
+        "Container": "e07f4c2d1daced1d025e0bd8157a787b03cac62cb8e6b26ae2f741b886442c28",
+        "ID": "e07f4c2d1dac",
+        "MemPerc": "72.20%",
+        "MemUsage": "184.8MiB / 256MiB",
+        "Name": "pulsestream-grafana-1",
+        "NetIO": "28MB / 814kB",
+        "PIDs": "23"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "2.98%",
+        "Container": "7d33d24fccb9ec4e0516a0c0160ed1a21ebfe08a4734e7c3fe20a6756881b1ae",
+        "ID": "7d33d24fccb9",
+        "MemPerc": "5.71%",
+        "MemUsage": "14.61MiB / 256MiB",
+        "Name": "pulsestream-ingestion-gateway-1",
+        "NetIO": "40.1MB / 9.89MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "192MB / 0B",
+        "CPUPerc": "0.40%",
+        "Container": "6c7601e7acf95a0229e2f3729af9b2a1830fe7dfc25e261d196e72738fb56e04",
+        "ID": "6c7601e7acf9",
+        "MemPerc": "44.76%",
+        "MemUsage": "57.29MiB / 128MiB",
+        "Name": "pulsestream-otel-1",
+        "NetIO": "404kB / 30.2kB",
+        "PIDs": "10"
+      },
+      {
+        "BlockIO": "78.8MB / 460MB",
+        "CPUPerc": "48.80%",
+        "Container": "1f75ba3a756bf82c6f5fc5d97a68745ba7a3b8d9f3b1cd500d1a7ea1b9c13632",
+        "ID": "1f75ba3a756b",
+        "MemPerc": "30.12%",
+        "MemUsage": "154.2MiB / 512MiB",
+        "Name": "pulsestream-postgres-1",
+        "NetIO": "147MB / 133MB",
+        "PIDs": "19"
+      },
+      {
+        "BlockIO": "170MB / 1.13MB",
+        "CPUPerc": "0.00%",
+        "Container": "60864ef49c408aac68d28312aef2777b61762a3dafcf6d9b580054c81fb516b1",
+        "ID": "60864ef49c40",
+        "MemPerc": "28.80%",
+        "MemUsage": "73.73MiB / 256MiB",
+        "Name": "pulsestream-prometheus-1",
+        "NetIO": "17.4MB / 422kB",
+        "PIDs": "12"
+      },
+      {
+        "BlockIO": "59.8MB / 238kB",
+        "CPUPerc": "7.54%",
+        "Container": "b7ef8c6f1b8eb24aa4bf02c7c6c1ec4f5ed3f9aa4528606910234aacad3f1d7a",
+        "ID": "b7ef8c6f1b8e",
+        "MemPerc": "14.25%",
+        "MemUsage": "18.24MiB / 128MiB",
+        "Name": "pulsestream-redis-1",
+        "NetIO": "265kB / 84.9kB",
+        "PIDs": "6"
+      },
+      {
+        "BlockIO": "272MB / 40MB",
+        "CPUPerc": "10.60%",
+        "Container": "c741cc0fa60d2d28d3f1953c5691bee40fc1cb8dd8e1215e867a735fbfcecf8a",
+        "ID": "c741cc0fa60d",
+        "MemPerc": "18.38%",
+        "MemUsage": "188.2MiB / 1GiB",
+        "Name": "pulsestream-redpanda-1",
+        "NetIO": "13.5MB / 24.6MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "4.15%",
+        "Container": "a704c1042696332f4a8b931e212831ebbafb974a438ef2a668d3e445e9aba0e2",
+        "ID": "a704c1042696",
+        "MemPerc": "3.11%",
+        "MemUsage": "15.93MiB / 512MiB",
+        "Name": "pulsestream-sink-dispatcher-1",
+        "NetIO": "100MB / 80.8MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "52.11%",
+        "Container": "087700bf031c6c61b5e0717bb902cebd0e401ee21b3f653e83be8067d9bd843e",
+        "ID": "087700bf031c",
+        "MemPerc": "8.79%",
+        "MemUsage": "67.52MiB / 768MiB",
+        "Name": "pulsestream-stream-processor-1",
+        "NetIO": "38MB / 140MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.21%",
+        "Container": "1e2a1241b705d6a4fbb069f5344d3a15b0be42d0979447b22d72923c80ac2760",
+        "ID": "1e2a1241b705",
+        "MemPerc": "3.38%",
+        "MemUsage": "8.664MiB / 256MiB",
+        "Name": "pulsestream-websocket-gateway-1",
+        "NetIO": "37kB / 68.6kB",
+        "PIDs": "9"
+      }
+    ]
+  },
+  {
+    "at": "2026-11-11T22:03:55.845683+00:00",
+    "containers": [
+      {
+        "BlockIO": "1.09MB / 0B",
+        "CPUPerc": "2.38%",
+        "Container": "37cf60ff967a567ffe6472b557c9bb06e7243b37fb8ecb4bd0d01c964fe8299a",
+        "ID": "37cf60ff967a",
+        "MemPerc": "3.52%",
+        "MemUsage": "9.023MiB / 256MiB",
+        "Name": "pulsestream-alert-service-1",
+        "NetIO": "2.1MB / 263kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "4c65394ae02c679debb786eb1d4d82b4c41bc3258a1485dae4bdcaed758aea43",
+        "ID": "4c65394ae02c",
+        "MemPerc": "3.25%",
+        "MemUsage": "8.324MiB / 256MiB",
+        "Name": "pulsestream-analytics-api-1",
+        "NetIO": "40.2kB / 69.7kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "541MB / 455MB",
+        "CPUPerc": "133.52%",
+        "Container": "022f26979567320a469f3f511e5630026e2cb01b2f4d1376c28e059dcf83b252",
+        "ID": "022f26979567",
+        "MemPerc": "43.96%",
+        "MemUsage": "675.2MiB / 1.5GiB",
+        "Name": "pulsestream-clickhouse-1",
+        "NetIO": "80.3MB / 3.88MB",
+        "PIDs": "172"
+      },
+      {
+        "BlockIO": "9.73MB / 16.4kB",
+        "CPUPerc": "0.00%",
+        "Container": "62d543f99f100c96b592802cf6d7f8c32899784a7ed41129a1edb36259699e21",
+        "ID": "62d543f99f10",
+        "MemPerc": "8.64%",
+        "MemUsage": "11.06MiB / 128MiB",
+        "Name": "pulsestream-dashboard-1",
+        "NetIO": "53.6kB / 319kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "2.75GB / 231MB",
+        "CPUPerc": "0.28%",
+        "Container": "e07f4c2d1daced1d025e0bd8157a787b03cac62cb8e6b26ae2f741b886442c28",
+        "ID": "e07f4c2d1dac",
+        "MemPerc": "72.14%",
+        "MemUsage": "184.7MiB / 256MiB",
+        "Name": "pulsestream-grafana-1",
+        "NetIO": "28MB / 814kB",
+        "PIDs": "23"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "3.88%",
+        "Container": "7d33d24fccb9ec4e0516a0c0160ed1a21ebfe08a4734e7c3fe20a6756881b1ae",
+        "ID": "7d33d24fccb9",
+        "MemPerc": "6.28%",
+        "MemUsage": "16.08MiB / 256MiB",
+        "Name": "pulsestream-ingestion-gateway-1",
+        "NetIO": "41.5MB / 10.2MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "192MB / 0B",
+        "CPUPerc": "0.11%",
+        "Container": "6c7601e7acf95a0229e2f3729af9b2a1830fe7dfc25e261d196e72738fb56e04",
+        "ID": "6c7601e7acf9",
+        "MemPerc": "44.74%",
+        "MemUsage": "57.27MiB / 128MiB",
+        "Name": "pulsestream-otel-1",
+        "NetIO": "404kB / 30.2kB",
+        "PIDs": "10"
+      },
+      {
+        "BlockIO": "78.8MB / 486MB",
+        "CPUPerc": "52.61%",
+        "Container": "1f75ba3a756bf82c6f5fc5d97a68745ba7a3b8d9f3b1cd500d1a7ea1b9c13632",
+        "ID": "1f75ba3a756b",
+        "MemPerc": "30.18%",
+        "MemUsage": "154.5MiB / 512MiB",
+        "Name": "pulsestream-postgres-1",
+        "NetIO": "155MB / 141MB",
+        "PIDs": "19"
+      },
+      {
+        "BlockIO": "170MB / 1.13MB",
+        "CPUPerc": "0.10%",
+        "Container": "60864ef49c408aac68d28312aef2777b61762a3dafcf6d9b580054c81fb516b1",
+        "ID": "60864ef49c40",
+        "MemPerc": "28.78%",
+        "MemUsage": "73.66MiB / 256MiB",
+        "Name": "pulsestream-prometheus-1",
+        "NetIO": "17.5MB / 426kB",
+        "PIDs": "12"
+      },
+      {
+        "BlockIO": "59.8MB / 238kB",
+        "CPUPerc": "0.44%",
+        "Container": "b7ef8c6f1b8eb24aa4bf02c7c6c1ec4f5ed3f9aa4528606910234aacad3f1d7a",
+        "ID": "b7ef8c6f1b8e",
+        "MemPerc": "14.25%",
+        "MemUsage": "18.24MiB / 128MiB",
+        "Name": "pulsestream-redis-1",
+        "NetIO": "273kB / 87.2kB",
+        "PIDs": "6"
+      },
+      {
+        "BlockIO": "272MB / 41.3MB",
+        "CPUPerc": "3.41%",
+        "Container": "c741cc0fa60d2d28d3f1953c5691bee40fc1cb8dd8e1215e867a735fbfcecf8a",
+        "ID": "c741cc0fa60d",
+        "MemPerc": "18.45%",
+        "MemUsage": "188.9MiB / 1GiB",
+        "Name": "pulsestream-redpanda-1",
+        "NetIO": "14MB / 24.8MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "5.75%",
+        "Container": "a704c1042696332f4a8b931e212831ebbafb974a438ef2a668d3e445e9aba0e2",
+        "ID": "a704c1042696",
+        "MemPerc": "3.80%",
+        "MemUsage": "19.45MiB / 512MiB",
+        "Name": "pulsestream-sink-dispatcher-1",
+        "NetIO": "106MB / 85.8MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "53.63%",
+        "Container": "087700bf031c6c61b5e0717bb902cebd0e401ee21b3f653e83be8067d9bd843e",
+        "ID": "087700bf031c",
+        "MemPerc": "8.56%",
+        "MemUsage": "65.71MiB / 768MiB",
+        "Name": "pulsestream-stream-processor-1",
+        "NetIO": "39.9MB / 148MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.06%",
+        "Container": "1e2a1241b705d6a4fbb069f5344d3a15b0be42d0979447b22d72923c80ac2760",
+        "ID": "1e2a1241b705",
+        "MemPerc": "3.38%",
+        "MemUsage": "8.664MiB / 256MiB",
+        "Name": "pulsestream-websocket-gateway-1",
+        "NetIO": "37kB / 68.6kB",
+        "PIDs": "9"
+      }
+    ]
+  },
+  {
+    "at": "2026-11-11T22:03:59.004911+00:00",
+    "containers": [
+      {
+        "BlockIO": "1.09MB / 0B",
+        "CPUPerc": "1.02%",
+        "Container": "37cf60ff967a567ffe6472b557c9bb06e7243b37fb8ecb4bd0d01c964fe8299a",
+        "ID": "37cf60ff967a",
+        "MemPerc": "3.37%",
+        "MemUsage": "8.621MiB / 256MiB",
+        "Name": "pulsestream-alert-service-1",
+        "NetIO": "2.2MB / 268kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "4c65394ae02c679debb786eb1d4d82b4c41bc3258a1485dae4bdcaed758aea43",
+        "ID": "4c65394ae02c",
+        "MemPerc": "3.27%",
+        "MemUsage": "8.359MiB / 256MiB",
+        "Name": "pulsestream-analytics-api-1",
+        "NetIO": "42kB / 71.1kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "541MB / 455MB",
+        "CPUPerc": "40.42%",
+        "Container": "022f26979567320a469f3f511e5630026e2cb01b2f4d1376c28e059dcf83b252",
+        "ID": "022f26979567",
+        "MemPerc": "44.40%",
+        "MemUsage": "682MiB / 1.5GiB",
+        "Name": "pulsestream-clickhouse-1",
+        "NetIO": "84.8MB / 4.01MB",
+        "PIDs": "172"
+      },
+      {
+        "BlockIO": "9.73MB / 16.4kB",
+        "CPUPerc": "0.00%",
+        "Container": "62d543f99f100c96b592802cf6d7f8c32899784a7ed41129a1edb36259699e21",
+        "ID": "62d543f99f10",
+        "MemPerc": "8.64%",
+        "MemUsage": "11.06MiB / 128MiB",
+        "Name": "pulsestream-dashboard-1",
+        "NetIO": "53.6kB / 319kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "2.75GB / 231MB",
+        "CPUPerc": "0.26%",
+        "Container": "e07f4c2d1daced1d025e0bd8157a787b03cac62cb8e6b26ae2f741b886442c28",
+        "ID": "e07f4c2d1dac",
+        "MemPerc": "72.09%",
+        "MemUsage": "184.6MiB / 256MiB",
+        "Name": "pulsestream-grafana-1",
+        "NetIO": "28MB / 814kB",
+        "PIDs": "23"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "3.42%",
+        "Container": "7d33d24fccb9ec4e0516a0c0160ed1a21ebfe08a4734e7c3fe20a6756881b1ae",
+        "ID": "7d33d24fccb9",
+        "MemPerc": "5.98%",
+        "MemUsage": "15.32MiB / 256MiB",
+        "Name": "pulsestream-ingestion-gateway-1",
+        "NetIO": "42.9MB / 10.6MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "193MB / 0B",
+        "CPUPerc": "0.09%",
+        "Container": "6c7601e7acf95a0229e2f3729af9b2a1830fe7dfc25e261d196e72738fb56e04",
+        "ID": "6c7601e7acf9",
+        "MemPerc": "45.54%",
+        "MemUsage": "58.3MiB / 128MiB",
+        "Name": "pulsestream-otel-1",
+        "NetIO": "438kB / 30.9kB",
+        "PIDs": "10"
+      },
+      {
+        "BlockIO": "78.8MB / 495MB",
+        "CPUPerc": "51.13%",
+        "Container": "1f75ba3a756bf82c6f5fc5d97a68745ba7a3b8d9f3b1cd500d1a7ea1b9c13632",
+        "ID": "1f75ba3a756b",
+        "MemPerc": "30.41%",
+        "MemUsage": "155.7MiB / 512MiB",
+        "Name": "pulsestream-postgres-1",
+        "NetIO": "164MB / 149MB",
+        "PIDs": "19"
+      },
+      {
+        "BlockIO": "170MB / 1.13MB",
+        "CPUPerc": "0.30%",
+        "Container": "60864ef49c408aac68d28312aef2777b61762a3dafcf6d9b580054c81fb516b1",
+        "ID": "60864ef49c40",
+        "MemPerc": "28.95%",
+        "MemUsage": "74.12MiB / 256MiB",
+        "Name": "pulsestream-prometheus-1",
+        "NetIO": "17.7MB / 429kB",
+        "PIDs": "12"
+      },
+      {
+        "BlockIO": "59.8MB / 238kB",
+        "CPUPerc": "0.45%",
+        "Container": "b7ef8c6f1b8eb24aa4bf02c7c6c1ec4f5ed3f9aa4528606910234aacad3f1d7a",
+        "ID": "b7ef8c6f1b8e",
+        "MemPerc": "14.24%",
+        "MemUsage": "18.22MiB / 128MiB",
+        "Name": "pulsestream-redis-1",
+        "NetIO": "281kB / 89.6kB",
+        "PIDs": "6"
+      },
+      {
+        "BlockIO": "272MB / 42.7MB",
+        "CPUPerc": "4.23%",
+        "Container": "c741cc0fa60d2d28d3f1953c5691bee40fc1cb8dd8e1215e867a735fbfcecf8a",
+        "ID": "c741cc0fa60d",
+        "MemPerc": "18.45%",
+        "MemUsage": "188.9MiB / 1GiB",
+        "Name": "pulsestream-redpanda-1",
+        "NetIO": "14.6MB / 24.9MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "4.51%",
+        "Container": "a704c1042696332f4a8b931e212831ebbafb974a438ef2a668d3e445e9aba0e2",
+        "ID": "a704c1042696",
+        "MemPerc": "3.29%",
+        "MemUsage": "16.82MiB / 512MiB",
+        "Name": "pulsestream-sink-dispatcher-1",
+        "NetIO": "112MB / 90.8MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "56.14%",
+        "Container": "087700bf031c6c61b5e0717bb902cebd0e401ee21b3f653e83be8067d9bd843e",
+        "ID": "087700bf031c",
+        "MemPerc": "8.56%",
+        "MemUsage": "65.71MiB / 768MiB",
+        "Name": "pulsestream-stream-processor-1",
+        "NetIO": "41.7MB / 156MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "1e2a1241b705d6a4fbb069f5344d3a15b0be42d0979447b22d72923c80ac2760",
+        "ID": "1e2a1241b705",
+        "MemPerc": "3.39%",
+        "MemUsage": "8.688MiB / 256MiB",
+        "Name": "pulsestream-websocket-gateway-1",
+        "NetIO": "39.3kB / 72.3kB",
+        "PIDs": "9"
+      }
+    ]
+  },
+  {
+    "at": "2026-11-11T22:04:02.242244+00:00",
+    "containers": [
+      {
+        "BlockIO": "1.09MB / 0B",
+        "CPUPerc": "0.02%",
+        "Container": "37cf60ff967a567ffe6472b557c9bb06e7243b37fb8ecb4bd0d01c964fe8299a",
+        "ID": "37cf60ff967a",
+        "MemPerc": "3.56%",
+        "MemUsage": "9.109MiB / 256MiB",
+        "Name": "pulsestream-alert-service-1",
+        "NetIO": "2.29MB / 276kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "4c65394ae02c679debb786eb1d4d82b4c41bc3258a1485dae4bdcaed758aea43",
+        "ID": "4c65394ae02c",
+        "MemPerc": "3.32%",
+        "MemUsage": "8.5MiB / 256MiB",
+        "Name": "pulsestream-analytics-api-1",
+        "NetIO": "42.5kB / 73.4kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "541MB / 543MB",
+        "CPUPerc": "21.34%",
+        "Container": "022f26979567320a469f3f511e5630026e2cb01b2f4d1376c28e059dcf83b252",
+        "ID": "022f26979567",
+        "MemPerc": "44.97%",
+        "MemUsage": "690.7MiB / 1.5GiB",
+        "Name": "pulsestream-clickhouse-1",
+        "NetIO": "89.8MB / 4.24MB",
+        "PIDs": "172"
+      },
+      {
+        "BlockIO": "9.73MB / 16.4kB",
+        "CPUPerc": "0.00%",
+        "Container": "62d543f99f100c96b592802cf6d7f8c32899784a7ed41129a1edb36259699e21",
+        "ID": "62d543f99f10",
+        "MemPerc": "8.64%",
+        "MemUsage": "11.06MiB / 128MiB",
+        "Name": "pulsestream-dashboard-1",
+        "NetIO": "53.6kB / 319kB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "2.75GB / 231MB",
+        "CPUPerc": "0.75%",
+        "Container": "e07f4c2d1daced1d025e0bd8157a787b03cac62cb8e6b26ae2f741b886442c28",
+        "ID": "e07f4c2d1dac",
+        "MemPerc": "72.29%",
+        "MemUsage": "185.1MiB / 256MiB",
+        "Name": "pulsestream-grafana-1",
+        "NetIO": "28MB / 814kB",
+        "PIDs": "23"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "3.42%",
+        "Container": "7d33d24fccb9ec4e0516a0c0160ed1a21ebfe08a4734e7c3fe20a6756881b1ae",
+        "ID": "7d33d24fccb9",
+        "MemPerc": "5.87%",
+        "MemUsage": "15.03MiB / 256MiB",
+        "Name": "pulsestream-ingestion-gateway-1",
+        "NetIO": "44.3MB / 10.9MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "193MB / 0B",
+        "CPUPerc": "0.75%",
+        "Container": "6c7601e7acf95a0229e2f3729af9b2a1830fe7dfc25e261d196e72738fb56e04",
+        "ID": "6c7601e7acf9",
+        "MemPerc": "45.61%",
+        "MemUsage": "58.38MiB / 128MiB",
+        "Name": "pulsestream-otel-1",
+        "NetIO": "478kB / 31.8kB",
+        "PIDs": "10"
+      },
+      {
+        "BlockIO": "78.9MB / 522MB",
+        "CPUPerc": "36.92%",
+        "Container": "1f75ba3a756bf82c6f5fc5d97a68745ba7a3b8d9f3b1cd500d1a7ea1b9c13632",
+        "ID": "1f75ba3a756b",
+        "MemPerc": "30.70%",
+        "MemUsage": "157.2MiB / 512MiB",
+        "Name": "pulsestream-postgres-1",
+        "NetIO": "173MB / 157MB",
+        "PIDs": "19"
+      },
+      {
+        "BlockIO": "170MB / 1.13MB",
+        "CPUPerc": "0.00%",
+        "Container": "60864ef49c408aac68d28312aef2777b61762a3dafcf6d9b580054c81fb516b1",
+        "ID": "60864ef49c40",
+        "MemPerc": "28.76%",
+        "MemUsage": "73.62MiB / 256MiB",
+        "Name": "pulsestream-prometheus-1",
+        "NetIO": "17.7MB / 431kB",
+        "PIDs": "12"
+      },
+      {
+        "BlockIO": "59.8MB / 238kB",
+        "CPUPerc": "2.56%",
+        "Container": "b7ef8c6f1b8eb24aa4bf02c7c6c1ec4f5ed3f9aa4528606910234aacad3f1d7a",
+        "ID": "b7ef8c6f1b8e",
+        "MemPerc": "14.43%",
+        "MemUsage": "18.47MiB / 128MiB",
+        "Name": "pulsestream-redis-1",
+        "NetIO": "289kB / 92kB",
+        "PIDs": "6"
+      },
+      {
+        "BlockIO": "272MB / 44.1MB",
+        "CPUPerc": "12.20%",
+        "Container": "c741cc0fa60d2d28d3f1953c5691bee40fc1cb8dd8e1215e867a735fbfcecf8a",
+        "ID": "c741cc0fa60d",
+        "MemPerc": "19.08%",
+        "MemUsage": "195.4MiB / 1GiB",
+        "Name": "pulsestream-redpanda-1",
+        "NetIO": "15.2MB / 24.9MB",
+        "PIDs": "12"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "2.21%",
+        "Container": "a704c1042696332f4a8b931e212831ebbafb974a438ef2a668d3e445e9aba0e2",
+        "ID": "a704c1042696",
+        "MemPerc": "3.46%",
+        "MemUsage": "17.74MiB / 512MiB",
+        "Name": "pulsestream-sink-dispatcher-1",
+        "NetIO": "119MB / 96.1MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "31.56%",
+        "Container": "087700bf031c6c61b5e0717bb902cebd0e401ee21b3f653e83be8067d9bd843e",
+        "ID": "087700bf031c",
+        "MemPerc": "8.65%",
+        "MemUsage": "66.46MiB / 768MiB",
+        "Name": "pulsestream-stream-processor-1",
+        "NetIO": "43.8MB / 165MB",
+        "PIDs": "9"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.27%",
+        "Container": "1e2a1241b705d6a4fbb069f5344d3a15b0be42d0979447b22d72923c80ac2760",
+        "ID": "1e2a1241b705",
+        "MemPerc": "3.59%",
+        "MemUsage": "9.199MiB / 256MiB",
+        "Name": "pulsestream-websocket-gateway-1",
+        "NetIO": "39.9kB / 74.7kB",
+        "PIDs": "9"
+      }
+    ]
+  }
+]

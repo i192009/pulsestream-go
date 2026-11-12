@@ -1,0 +1,15 @@
+{
+  "acknowledged": 10000,
+  "acknowledged_eps": 10059.051652667937,
+  "base_time": "2026-11-11T22:15:58.964921879Z",
+  "failed": 0,
+  "generated": 10000,
+  "http_batch_latency_p50_ms": 6,
+  "http_batch_latency_p95_ms": 25,
+  "http_batch_latency_p99_ms": 39,
+  "requests": 100,
+  "scope": "ingestion acknowledgements only; not durable processing throughput",
+  "seconds": 0.994129501,
+  "seed": 1010001,
+  "target_eps": 10000
+}

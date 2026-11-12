@@ -1,0 +1,62 @@
+{{- if .Values.dashboard.enabled }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-nginx
+data:
+  default.conf: |
+    server {
+      listen 8080;
+      root /usr/share/nginx/html;
+      location / { try_files $uri $uri/ /index.html; }
+      location /v1/ { proxy_pass http://{{ .Release.Name }}-analytics-api:8080; }
+      location /ws {
+        proxy_pass http://{{ .Release.Name }}-websocket-gateway:8080;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_read_timeout 60s;
+      }
+    }
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-dashboard
+spec:
+  replicas: 1
+  selector:
+    matchLabels: {app: {{ .Release.Name }}-dashboard}
+  template:
+    metadata:
+      labels: {app: {{ .Release.Name }}-dashboard, app.kubernetes.io/part-of: {{ .Release.Name }}}
+    spec:
+      securityContext: {runAsNonRoot: true, runAsUser: 101}
+      containers:
+        - name: dashboard
+          image: {{ .Values.dashboard.image }}
+          imagePullPolicy: {{ .Values.dashboard.pullPolicy }}
+          ports: [{name: http, containerPort: 8080}]
+          resources:
+            requests: {cpu: 50m, memory: 32Mi}
+            limits: {cpu: 200m, memory: 128Mi}
+          readinessProbe:
+            httpGet: {path: /, port: http}
+          livenessProbe:
+            httpGet: {path: /, port: http}
+          volumeMounts:
+            - name: config
+              mountPath: /etc/nginx/conf.d/default.conf
+              subPath: default.conf
+      volumes:
+        - name: config
+          configMap: {name: {{ .Release.Name }}-nginx}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-dashboard
+spec:
+  selector: {app: {{ .Release.Name }}-dashboard}
+  ports: [{name: http, port: 8080, targetPort: http}]
+{{- end }}

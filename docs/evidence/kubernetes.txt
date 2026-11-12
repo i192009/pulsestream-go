@@ -1,0 +1,19 @@
+NAME                                       READY   STATUS      RESTARTS   AGE
+clickhouse-788569dd85-d6mnj                1/1     Running     0          7m
+postgres-84c8578467-sg756                  1/1     Running     0          7m1s
+pulse-alert-service-65f94474b-txlb7        1/1     Running     0          2m40s
+pulse-analytics-api-5d549bf8b4-2j4wg       1/1     Running     0          2m40s
+pulse-dashboard-54fd9569b5-lzf8j           1/1     Running     0          2m38s
+pulse-ingestion-gateway-59b8b479b-tlcps    1/1     Running     0          2m40s
+pulse-init-5jfgq                           0/1     Completed   0          5m5s
+pulse-sink-dispatcher-b5c9f9bcd-ff2w8      1/1     Running     0          2m39s
+pulse-stream-processor-58ffbd76-js45p      1/1     Running     0          2m39s
+pulse-websocket-gateway-759cf8f5d6-5fqbk   1/1     Running     0          2m39s
+redis-7c484b8f7f-h7sl6                     1/1     Running     0          7m1s
+redpanda-85597f4bbc-4hpnp                  1/1     Running     0          7m
+NAME: pulse
+LAST DEPLOYED: Wed Nov 11 22:26:30 2026
+NAMESPACE: pulsestream
+STATUS: deployed
+REVISION: 2
+TEST SUITE: None

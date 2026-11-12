@@ -1,0 +1,25 @@
+syntax = "proto3";
+package pulse.v1;
+option go_package = "github.com/pulsestream/pulsestream-go/api/gen/pulse/v1;pulsev1";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/struct.proto";
+message Event {
+ string event_id = 1;
+ string tenant_id = 2;
+ string event_type = 3;
+ uint32 schema_version = 4;
+ string partition_key = 5;
+ string producer_id = 6;
+ google.protobuf.Timestamp event_timestamp = 7;
+ google.protobuf.Timestamp ingestion_timestamp = 8;
+ string trace_id = 9;
+ string correlation_id = 10;
+ google.protobuf.Struct payload = 11;
+ map<string,string> metadata = 12;
+}
+message PublishRequest { repeated Event events = 1; }
+message PublishResponse { uint32 acknowledged = 1; repeated string event_ids = 2; }
+message QueryRequest { string from = 1; string to = 2; uint32 limit = 3; }
+message JSONResponse { bytes json = 1; }
+service IngestionService { rpc PublishEventBatch(PublishRequest) returns (PublishResponse); }
+service AnalyticsService { rpc GetWindowMetrics(QueryRequest) returns (JSONResponse); }

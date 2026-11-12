@@ -1,0 +1,36 @@
+{{- if .Values.ingress.enabled }}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ .Release.Name }}
+spec:
+  ingressClassName: {{ .Values.ingress.className }}
+  {{- if .Values.ingress.tlsSecret }}
+  tls:
+    - hosts: [{{ .Values.ingress.host }}]
+      secretName: {{ .Values.ingress.tlsSecret }}
+  {{- end }}
+  rules:
+    - host: {{ .Values.ingress.host }}
+      http:
+        paths:
+          - path: /v1
+            pathType: Prefix
+            backend:
+              service: {name: {{ .Release.Name }}-analytics-api, port: {number: 8080}}
+          - path: /ws
+            pathType: Prefix
+            backend:
+              service: {name: {{ .Release.Name }}-websocket-gateway, port: {number: 8080}}
+          - path: /
+            pathType: Prefix
+            backend:
+              service: {name: {{ .Release.Name }}-dashboard, port: {number: 8080}}
+    - host: {{ .Values.ingress.ingestHost }}
+      http:
+        paths:
+          - path: /v1/events
+            pathType: Exact
+            backend:
+              service: {name: {{ .Release.Name }}-ingestion-gateway, port: {number: 8080}}
+{{- end }}

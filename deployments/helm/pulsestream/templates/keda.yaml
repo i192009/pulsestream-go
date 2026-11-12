@@ -1,0 +1,25 @@
+{{- if .Values.keda.enabled }}
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: {{ .Release.Name }}-processor
+spec:
+  scaleTargetRef:
+    name: {{ .Release.Name }}-stream-processor
+  pollingInterval: 15
+  cooldownPeriod: 120
+  minReplicaCount: 1
+  maxReplicaCount: {{ min (int .Values.config.PULSE_PARTITIONS) (int .Values.keda.maxReplicas) }}
+  triggers:
+    - type: kafka
+      metadata:
+        bootstrapServers: {{ .Values.keda.brokers | quote }}
+        consumerGroup: {{ .Values.config.PULSE_GROUP }}
+        topic: pulsestream.events.raw.v1
+        lagThreshold: {{ .Values.keda.lagThreshold | quote }}
+        offsetResetPolicy: earliest
+      {{- if .Values.keda.authenticationRef }}
+      authenticationRef:
+        name: {{ .Values.keda.authenticationRef }}
+      {{- end }}
+{{- end }}

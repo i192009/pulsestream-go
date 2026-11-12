@@ -1,0 +1,9 @@
+Command: docker run --rm -e PULSE_MILLION=1 -v <repository>:/src -v pulse-gomod:/go/pkg/mod -v pulse-gocache:/root/.cache/go-build -w /src golang:1.26 go test -v -count=1 -timeout 3m ./tests/integration -run TestMillionSyntheticWindowBatch
+
+=== RUN TestMillionSyntheticWindowBatch
+1,000,000 synthetic events validated and aggregated across eight states in 13.548977527s; count and integer revenue match offline reference.
+--- PASS: TestMillionSyntheticWindowBatch (13.55s)
+PASS
+ok github.com/pulsestream/pulsestream-go/tests/integration 13.601s
+
+CPU workload only. Does not measure distributed ingestion or durable storage throughput.

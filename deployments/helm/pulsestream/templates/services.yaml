@@ -1,0 +1,68 @@
+{{- range $name, $service := .Values.services }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $.Release.Name }}-{{ $name }}
+  labels: {app.kubernetes.io/part-of: {{ $.Release.Name }}, app.kubernetes.io/name: {{ $name }}}
+spec:
+  replicas: {{ $service.replicas }}
+  selector:
+    matchLabels: {app: {{ $.Release.Name }}-{{ $name }}}
+  template:
+    metadata:
+      labels: {app: {{ $.Release.Name }}-{{ $name }}, app.kubernetes.io/part-of: {{ $.Release.Name }}, app.kubernetes.io/name: {{ $name }}}
+    spec:
+      terminationGracePeriodSeconds: 30
+      securityContext: {runAsNonRoot: true, runAsUser: 65532, fsGroup: 65532, seccompProfile: {type: RuntimeDefault}}
+      containers:
+        - name: {{ $name }}
+          image: {{ $.Values.image.repository }}:{{ $.Values.image.tag }}
+          imagePullPolicy: {{ $.Values.image.pullPolicy }}
+          args: [{{ $name }}]
+          ports:
+            - {name: http, containerPort: 8080}
+            {{- if or (eq $name "ingestion-gateway") (eq $name "analytics-api") }}
+            - {name: grpc, containerPort: 9090}
+            {{- end }}
+          envFrom:
+            - configMapRef: {name: {{ $.Release.Name }}-config}
+            - secretRef: {name: {{ $.Values.secretName }}}
+          securityContext: {allowPrivilegeEscalation: false, readOnlyRootFilesystem: true, capabilities: {drop: [ALL]}}
+          resources:
+            {{- toYaml $.Values.resources | nindent 12 }}
+          livenessProbe:
+            httpGet: {path: /healthz, port: http}
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          readinessProbe:
+            httpGet: {path: /readyz, port: http}
+            periodSeconds: 5
+          startupProbe:
+            httpGet: {path: /healthz, port: http}
+            failureThreshold: 30
+            periodSeconds: 5
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ $.Release.Name }}-{{ $name }}
+spec:
+  selector: {app: {{ $.Release.Name }}-{{ $name }}}
+  ports:
+    - {name: http, port: 8080, targetPort: http}
+    {{- if or (eq $name "ingestion-gateway") (eq $name "analytics-api") }}
+    - {name: grpc, port: 9090, targetPort: grpc}
+    {{- end }}
+{{- if gt (int $service.replicas) 1 }}
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: {{ $.Release.Name }}-{{ $name }}
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels: {app: {{ $.Release.Name }}-{{ $name }}}
+{{- end }}
+{{- end }}

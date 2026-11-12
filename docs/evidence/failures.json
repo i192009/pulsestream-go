@@ -1,0 +1,33 @@
+{
+  "executed_at": "2026-11-11T22:52:18.867910+00:00",
+  "scenarios": [
+    {
+      "scenario": "processor stop while ingestion continues, restart and recover",
+      "seconds": 2.7453540999849793,
+      "events": 100
+    },
+    {
+      "scenario": "stable IDs at new offsets do not inflate aggregates",
+      "before": "343402",
+      "after": "343402"
+    },
+    {
+      "scenario": "ClickHouse outage and convergent retry",
+      "events": 50
+    },
+    {
+      "scenario": "Redis outage fails closed for ingestion; durable state remains intact"
+    },
+    {
+      "scenario": "consumer scale-out and rebalance",
+      "events": 100
+    },
+    {
+      "scenario": "invalid version DLQ, filtered inspection, corrected audited replay",
+      "published": 1
+    },
+    {
+      "scenario": "single broker outage rejects acknowledgements (availability is not claimed)"
+    }
+  ]
+}
